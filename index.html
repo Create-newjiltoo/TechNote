@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TechNote — M365 · Power Platform · Development</title>
+<meta name="description" content="Microsoft 365, Power Platform, 개발에 관한 실전 노트와 정리 글. 검색 가능한 기술 블로그.">
+<meta name="author" content="설용환">
+<meta name="keywords" content="Microsoft 365, M365, Power Platform, Power Automate, Power Apps, Power BI, 개발, PowerShell, Graph API, 자동화">
+<!-- Open Graph / 소셜 공유 -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="TechNote — M365 · Power Platform · Development">
+<meta property="og:description" content="Microsoft 365, Power Platform, 개발 실전 노트">
+<meta property="og:locale" content="ko_KR">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">📘</span>
+        <span class="brand-text"><b>TechNote</b><small id="siteSubtitle"></small></span>
+      </a>
+      <div class="search-box">
+        <input type="search" id="search" placeholder="제목·태그·내용 검색… (예: Power Automate, DLP)" autocomplete="off">
+        <span class="search-ico">🔍</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="catnav">
+    <div class="wrap catnav-inner" id="catNav"></div>
+  </nav>
+
+  <main class="wrap">
+    <section class="hero" id="hero">
+      <h1 id="heroTitle"></h1>
+      <p id="heroDesc"></p>
+    </section>
+
+    <section class="toolbar">
+      <div class="tags-filter" id="tagCloud"></div>
+      <div class="result-count" id="resultCount"></div>
+    </section>
+
+    <section class="post-grid" id="postGrid"></section>
+    <p class="empty" id="emptyMsg" hidden>검색 결과가 없습니다. 다른 키워드로 시도해 보세요.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span id="footerAuthor"></span>
+      <span>· Built with static HTML · GitHub Pages ready</span>
+    </div>
+  </footer>
+
+  <script src="data/posts.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

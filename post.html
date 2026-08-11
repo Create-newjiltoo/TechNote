@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>글 — TechNote</title>
+<meta name="description" id="metaDesc" content="TechNote 기술 블로그 글">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="stylesheet" href="assets/style.css">
+<!-- 구조화 데이터(JSON-LD)는 app.js에서 동적으로 주입 -->
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">📘</span>
+        <span class="brand-text"><b>TechNote</b><small>M365 · Power Platform · Development</small></span>
+      </a>
+      <a class="back-link" href="index.html">← 목록으로</a>
+    </div>
+  </header>
+
+  <main class="wrap article-wrap">
+    <article id="article" class="article">
+      <p class="loading">불러오는 중…</p>
+    </article>
+    <section class="related">
+      <h3>관련 글</h3>
+      <div id="related" class="related-list"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap"><span id="footerAuthor"></span> · TechNote</div>
+  </footer>
+
+  <script src="data/posts.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
