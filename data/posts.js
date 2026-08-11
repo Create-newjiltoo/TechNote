@@ -9,18 +9,64 @@ window.BLOG_DATA = {
     "baseUrl": "https://<your-username>.github.io/<repo>"
   },
   "categories": [
-    { "id": "m365", "name": "Microsoft 365", "color": "#0f6cbd", "icon": "📊", "desc": "Teams, SharePoint, Exchange, Purview 등 M365 운영·관리" },
-    { "id": "powerplatform", "name": "Power Platform", "color": "#742774", "icon": "⚡", "desc": "Power Apps, Power Automate, Power BI, Copilot Studio" },
-    { "id": "dev", "name": "Development", "color": "#107c41", "icon": "💻", "desc": "스크립트, API, 자동화, 웹/클라우드 개발" }
+    {
+      "id": "m365",
+      "name": "Microsoft 365",
+      "color": "#0f6cbd",
+      "icon": "📊",
+      "desc": "Teams, SharePoint, Exchange, Purview 등 M365 운영·관리"
+    },
+    {
+      "id": "powerplatform",
+      "name": "Power Platform",
+      "color": "#742774",
+      "icon": "⚡",
+      "desc": "Power Apps, Power Automate, Power BI, Copilot Studio"
+    },
+    {
+      "id": "dev",
+      "name": "Development",
+      "color": "#107c41",
+      "icon": "💻",
+      "desc": "스크립트, API, 자동화, 웹/클라우드 개발"
+    }
   ],
   "posts": [
+    {
+      "id": "agent-365-entra-agent-id-완전-정리-ai-에이전트에게도-사원증-이-필요한-이유",
+      "title": "Agent 365 & Entra Agent ID 완전 정리 — AI 에이전트에게도 '사원증'이 필요한 이유",
+      "category": "m365",
+      "tags": [
+        "Agent 365",
+        "Entra Agent ID",
+        "AI 에이전트",
+        "Microsoft Entra",
+        "제로트러스트"
+      ],
+      "date": "2026-08-11",
+      "source": {
+        "type": "youtube",
+        "url": "https://www.youtube.com/watch?v=WTcyL68qTo8"
+      },
+      "summary": "폭증하는 AI 에이전트를 사람 직원처럼 식별·보호·관리하는 Microsoft Agent 365와 Entra Agent ID의 핵심 구조(블루프린트, 인증 흐름, Entra/Purview/Defender 통합, 레지스트리)를 정리했습니다.",
+      "thumbnail": "",
+      "readingMinutes": 3,
+      "content": "<p>Microsoft MVP이자 유튜브 채널 \"John Savill's Technical Training\"을 운영하는 John Savill이 공개한 <strong>\"Agent 365 및 Agent ID 개요\"</strong>(2026년 2월, 48분 분량) 영상을 바탕으로, AI 에이전트 전용 정체성 체계인 <strong>Microsoft Entra Agent ID</strong>와 이를 아우르는 <strong>Microsoft Agent 365</strong>의 핵심 구조를 정리했습니다.</p>\n\n<h2>왜 지금 '에이전트 전용 ID'가 필요한가</h2>\n<p>영상은 숫자로 문제의 심각성을 짚으며 시작합니다. 전 세계 AI 에이전트 수는 2028년 10억 개를 훌쩍 넘어설 것으로 전망되고, Microsoft 한 곳만 해도 매주 약 5,000개의 에이전트가 새로 생성되고 있습니다. 조만간 한 조직 안에서 에이전트 수가 임직원 수를 넘어서는 시점이 온다는 뜻입니다.</p>\n<p>문제는 지금까지 대부분의 에이전트가 사람의 계정을 빌려 쓰거나, 지나치게 단순한 서비스 principal / 앱 등록 방식으로 동작해왔다는 점입니다. 그 결과 조직은 \"어떤 에이전트가 있는지조차 모르는\" 가시성 문제, 사람과 에이전트 간 협업이 어려운 문제, 그리고 무엇보다 \"보이지 않는 것은 보호할 수 없다\"는 보안 문제에 부딪힙니다. 최소 권한으로 동작하는지, 가드레일 안에서 움직이는지, 어떤 데이터에 접근하는지를 추적할 방법이 없는 것이죠.</p>\n\n<h2>사람 직원에게 쓰던 프레임워크를 에이전트로 확장한다</h2>\n<p>Savill이 제시하는 해법의 방향은 단순합니다. 이미 임직원을 위해 잘 갖춰놓은 <strong>Entra(신원·접근 관리) → Purview(데이터 거버넌스) → Defender(위협 방지) → Microsoft 365 생산성 도구</strong>라는 검증된 체계를, 완전히 새로 만드는 대신 AI 에이전트에 맞게 확장하자는 것입니다. 사람 직원이 회사 계정으로 로그인해 역할 기반 접근 제어(RBAC), 조건부 액세스, 감사 로그의 보호를 받듯, 에이전트도 동일한 수준의 통제를 받아야 한다는 논리입니다. 이 확장판이 바로 <strong>Agent 365</strong>이고, 그 출발점이 되는 것이 <strong>Agent ID</strong>입니다.</p>\n\n<h2>Agent ID란 무엇인가</h2>\n<p>기존의 앱 등록(서비스 principal)이나 사람 계정을 그대로 쓰지 않는 이유는 명확합니다. 서비스 principal은 에이전트가 수행할 작업 범위에 비해 권한 모델이 너무 제한적이고, 사람 계정은 MFA·패스키처럼 \"물리적 실체\"를 전제로 한 인증 수단을 에이전트에 적용할 수 없기 때문입니다. 그래서 Microsoft는 에이전트 전용 정체성 유형인 <strong>Agent ID</strong>를 새로 만들었습니다.</p>\n<img src=\"https://learn.microsoft.com/en-us/entra/agent-id/media/agent-identities/agent-identity.png\" alt=\"Microsoft Entra Agent ID 구조를 보여주는 다이어그램\" loading=\"lazy\">\n<p class=\"img-caption\">Agent ID의 구성 요소 — 식별자, 표시 이름, 스폰서, 블루프린트로 구성된다. (출처: Microsoft Learn)</p>\n<p>Agent ID는 Entra 안에서 특수한 형태의 서비스 principal로 동작하며, 다음과 같은 요소로 구성됩니다.</p>\n<ul>\n<li><strong>식별자(Object ID)</strong> — 테넌트 내에서 에이전트를 고유하게 식별</li>\n<li><strong>표시 이름</strong> — Entra 관리 센터, Teams, Outlook 등에 노출되는 사람이 읽기 쉬운 이름</li>\n<li><strong>스폰서(Sponsor)</strong> — 이 에이전트에 대해 책임을 지는 사람 또는 그룹. 보안 사고 시 연락 대상이자, 에이전트가 계속 필요한지 판단하는 주체로 지정되어 \"고아 에이전트(orphaned agent)\" 문제를 막는 핵심 장치입니다.</li>\n<li><strong>블루프린트(Blueprint)</strong> — 이 Agent ID가 어떤 템플릿에서 만들어졌는지를 가리키는 연결고리</li>\n</ul>\n<p>중요한 점은 Agent ID 자체는 <strong>자격 증명(credential)을 갖지 않는다</strong>는 것입니다. 인증은 항상 아래에서 설명할 블루프린트를 통해 이뤄집니다.</p>\n\n<h2>블루프린트: Agent ID를 찍어내는 '틀'</h2>\n<img src=\"https://learn.microsoft.com/en-us/entra/agent-id/media/agent-identities/agent-blueprint.png\" alt=\"Agent Identity와 Agent Identity Blueprint의 관계를 보여주는 다이어그램\" loading=\"lazy\">\n<p class=\"img-caption\">여러 개의 Agent ID가 하나의 블루프린트에서 파생되는 구조. (출처: Microsoft Learn)</p>\n<p>블루프린트는 에이전트 종류별 템플릿입니다. 예를 들어 \"영업 어시스턴트 에이전트\"라는 블루프린트를 하나 만들면, 북미 영업팀용·남미 영업팀용·엔터프라이즈 영업팀용 등 여러 인스턴스가 이 블루프린트에서 각각 Agent ID를 발급받아 생성됩니다. 블루프린트에는 다음이 정의됩니다.</p>\n<ul>\n<li>에이전트가 가질 수 있는 역할과 Microsoft Graph 권한 범위(앱 권한 + 위임 권한)</li>\n<li>인증 방식 — 관리 ID(managed identity)에 준하는 페더레이션 방식을 권장하며, 인증서는 가능하지만 시크릿 방식은 지양</li>\n<li>사용자 read/write.all처럼 에이전트에게 절대 부여해서는 안 되는 고위험 권한에 대한 제약</li>\n</ul>\n<p>조직이 블루프린트 사용에 <strong>동의(consent)</strong>하면 해당 테넌트 안에 \"블루프린트 서비스 principal\"이 생성되고, 이 principal이 실제 Agent ID들을 만들어내는 권한을 갖게 됩니다. 이 구조는 개발자에게 익숙한 \"앱 등록 → 엔터프라이즈 앱(서비스 principal)\" 패턴과 사실상 동일합니다. 인증 흐름도 비슷한 원리로 동작합니다. 에이전트 플랫폼(Foundry, Copilot Studio 등)이 블루프린트로 먼저 인증한 뒤, 이를 특정 Agent ID용 토큰으로 교환(token exchange)해서 실제 리소스에 접근하는 방식입니다.</p>\n<p>Exchange 메일함, Teams, SharePoint처럼 반드시 사람 계정 형태가 필요한 서비스에 에이전트를 연결해야 할 때는, Agent ID의 하위 개체로 <strong>Agent's user account(에이전트 사용자 계정)</strong>를 선택적으로 추가할 수 있습니다. 이렇게 하면 문서에서 에이전트를 멘션하거나 Teams에서 말을 거는 식의 자연스러운 협업이 가능해지는데, 이 영역까지 활용하려면 <strong>Agent 365 라이선스</strong>가 필요합니다.</p>\n\n<h2>Agent 365의 세 기둥: Entra · Purview · Defender</h2>\n<p>Agent ID가 생기고 나면, 사람 직원에게 적용하던 보안 통제를 그대로 에이전트에 적용할 수 있게 됩니다.</p>\n<ul>\n<li><strong>Entra</strong> — RBAC, 권한 관리(Entitlement Management), 조건부 액세스를 에이전트 단위 또는 에이전트 유형 단위로 적용. 사람과 다르게 \"하루 24시간 계속 작동\"하는 패턴은 정상으로 인식하는 등, 위험 신호 판정 기준도 에이전트 특성에 맞게 조정됩니다.</li>\n<li><strong>Purview</strong> — 에이전트의 데이터 접근을 모니터링·통제. 사람이 5분 안에 문서 500개를 열람하면 유출 의심 신호지만, 에이전트가 3분 안에 문서 1,000개를 조회하는 것은 정상적인 RAG(검색 증강 생성) 동작으로 판단하는 식으로, 에이전트 행동 패턴에 맞춰 판단 기준이 달라집니다.</li>\n<li><strong>Defender</strong> — 프롬프트 인젝션, 탈옥(jailbreak) 시도, ASI 스머글링, 악성 IP발 비정상 접근 등 에이전트 특화 위협에 대한 실시간 탐지·차단과 사고 조사(전체 공격 체인, 툴 호출, MCP 상호작용, 멀티 에이전트 통신까지 포함) 기능을 제공합니다.</li>\n</ul>\n<p>여기에 <strong>Work IQ</strong>가 더해지면 에이전트가 조직의 이메일·문서·회의·Teams 대화를 아우르는 업무 맥락과 사람·데이터 간의 관계를 이해하고 능동적으로 일할 수 있게 되며, Power Apps·Power BI 연동까지 포함해 \"생산성\" 축을 완성합니다.</p>\n\n<h2>레지스트리와 컬렉션 — 에이전트도 서로를 찾아야 한다</h2>\n<p>마지막 조각은 <strong>레지스트리(Registry)</strong>입니다. 조직 안의 모든 에이전트가 이 레지스트리에 등록되면, 관리자는 전체 에이전트 현황을 한눈에 파악(인벤토리)할 수 있고, 각 에이전트는 \"에이전트 카드\"라는 일종의 매니페스트를 통해 자신의 역할과 기능을 노출해 다른 에이전트가 자신을 발견(discovery)하고 협업(A2A)할 수 있게 됩니다.</p>\n<p>여기서 중요한 구분은, 레지스트리는 \"누가 누구에게 접근할 수 있는가\"를 통제하는 장치가 아니라 <strong>\"서로를 찾을 수 있게 해주는\" 발견 계층</strong>이라는 점입니다. 접근 통제는 여전히 Entra의 역할·조건부 액세스가 담당합니다. 조직은 필요에 따라 특정 목적의 에이전트를 묶는 <strong>커스텀 컬렉션</strong>을 만들거나, 문제가 있는 에이전트를 격리하는 <strong>격리(Quarantine) 컬렉션</strong>에 넣어 누구에게도 발견되지 않게 할 수도 있습니다. 참고로 Agent ID가 없는 에이전트도 레지스트리에는 등록할 수 있지만, 레지스트리를 조회하고 다른 에이전트를 검색하려면 Agent ID가 필요합니다.</p>\n\n<h2>정리</h2>\n<p>결국 Agent 365가 하는 일은 새로운 체계를 처음부터 만드는 것이 아니라, 조직이 이미 사람 직원에게 적용해온 신원(Entra)·데이터 보호(Purview)·위협 방지(Defender)·생산성(M365/Work IQ) 프레임워크를 AI 에이전트라는 새로운 \"구성원\" 유형에 맞게 확장하는 것으로 요약됩니다. 모든 에이전트는 고유한 Agent ID와 책임자(스폰서)를 갖고, 표준화된 블루프린트를 통해 일관된 보안 정책 아래 생성·인증되며, 레지스트리를 통해 서로를 발견합니다. AI 에이전트 수가 폭발적으로 늘어나는 지금, 이 정체성 기반 거버넌스는 선택이 아니라 전제 조건이 되고 있습니다.</p>\n\n<h2>더 알아보기</h2>\n<ul>\n<li><a href=\"https://learn.microsoft.com/en-us/entra/agent-id/agent-identities\" target=\"_blank\" rel=\"noopener\">Microsoft Learn — Overview of agent identities in Microsoft Entra</a></li>\n<li><a href=\"https://learn.microsoft.com/en-us/entra/agent-id/agent-blueprint\" target=\"_blank\" rel=\"noopener\">Microsoft Learn — Agent identity blueprints in Microsoft Entra Agent ID</a></li>\n<li><a href=\"https://learn.microsoft.com/en-us/microsoft-agent-365/developer/identity\" target=\"_blank\" rel=\"noopener\">Microsoft Learn — Agent 365 Identity</a></li>\n</ul>"
+    },
     {
       "id": "welcome-technote",
       "title": "TechNote 블로그를 시작합니다",
       "category": "dev",
-      "tags": ["소개", "블로그", "GitHub Pages"],
+      "tags": [
+        "소개",
+        "블로그",
+        "GitHub Pages"
+      ],
       "date": "2026-07-27",
-      "source": { "type": "original", "url": "" },
+      "source": {
+        "type": "original",
+        "url": ""
+      },
       "summary": "M365, Power Platform, 개발 관련 실전 노트를 정리하는 공간입니다. 링크를 받아 자동으로 글이 쌓이도록 설계했습니다.",
       "thumbnail": "",
       "readingMinutes": 2,
@@ -30,9 +76,17 @@ window.BLOG_DATA = {
       "id": "power-automate-approval-flow",
       "title": "Power Automate로 문서 승인 흐름 만들기",
       "category": "powerplatform",
-      "tags": ["Power Automate", "승인", "SharePoint", "자동화"],
+      "tags": [
+        "Power Automate",
+        "승인",
+        "SharePoint",
+        "자동화"
+      ],
       "date": "2026-07-20",
-      "source": { "type": "original", "url": "" },
+      "source": {
+        "type": "original",
+        "url": ""
+      },
       "summary": "SharePoint 목록에 항목이 추가되면 관리자에게 승인 요청을 보내고 결과에 따라 상태를 업데이트하는 기본 승인 흐름을 단계별로 정리했습니다.",
       "thumbnail": "",
       "readingMinutes": 6,
@@ -42,9 +96,17 @@ window.BLOG_DATA = {
       "id": "m365-purview-dlp-basics",
       "title": "Microsoft Purview DLP 정책 기본 개념 정리",
       "category": "m365",
-      "tags": ["Purview", "DLP", "보안", "컴플라이언스"],
+      "tags": [
+        "Purview",
+        "DLP",
+        "보안",
+        "컴플라이언스"
+      ],
       "date": "2026-07-12",
-      "source": { "type": "article", "url": "https://learn.microsoft.com/purview/dlp-learn-about-dlp" },
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/purview/dlp-learn-about-dlp"
+      },
       "summary": "데이터 손실 방지(DLP) 정책의 구성 요소 - 위치, 규칙, 조건, 작업 - 를 한 장으로 정리하고 실무에서 자주 쓰는 설정을 소개합니다.",
       "thumbnail": "",
       "readingMinutes": 5,
@@ -54,9 +116,18 @@ window.BLOG_DATA = {
       "id": "graph-api-powershell-users",
       "title": "Microsoft Graph PowerShell로 사용자 일괄 관리",
       "category": "dev",
-      "tags": ["Graph API", "PowerShell", "M365", "자동화", "스크립트"],
+      "tags": [
+        "Graph API",
+        "PowerShell",
+        "M365",
+        "자동화",
+        "스크립트"
+      ],
       "date": "2026-07-05",
-      "source": { "type": "youtube", "url": "https://www.youtube.com/results?search_query=microsoft+graph+powershell" },
+      "source": {
+        "type": "youtube",
+        "url": "https://www.youtube.com/results?search_query=microsoft+graph+powershell"
+      },
       "summary": "Microsoft.Graph 모듈로 사용자 조회·생성·라이선스 할당을 자동화하는 실전 스크립트 예제를 정리했습니다.",
       "thumbnail": "",
       "readingMinutes": 7,

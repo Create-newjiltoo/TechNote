@@ -100,6 +100,10 @@ a:hover { text-decoration: underline; }
 .article-content pre code { background: none; color: inherit; padding: 0; }
 .article-content blockquote { border-left: 4px solid var(--brand); background: var(--brand-soft);
   margin: 16px 0; padding: 10px 16px; border-radius: 0 8px 8px 0; color: var(--ink); }
+.article-content img { display: block; max-width: 100%; height: auto; margin: 18px auto 4px;
+  border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+.article-content .img-caption { text-align: center; font-size: 12.5px; color: var(--ink-soft);
+  margin: 0 0 18px; }
 .source-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; font-size: 14px;
   background: var(--brand-soft); padding: 8px 14px; border-radius: 8px; }
 
