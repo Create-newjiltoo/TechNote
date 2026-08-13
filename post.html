@@ -16,7 +16,11 @@
         <span class="brand-mark">📘</span>
         <span class="brand-text"><b>TechNote</b><small>M365 · Power Platform · Development</small></span>
       </a>
-      <a class="back-link" href="index.html">← 목록으로</a>
+      <a class="back-link" id="backLink" href="index.html">← 목록으로</a>
+      <div class="lang-toggle" id="langToggle">
+        <button type="button" data-lang="ko">한글</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
     </div>
   </header>
 
@@ -25,13 +29,13 @@
       <p class="loading">불러오는 중…</p>
     </article>
     <section class="related">
-      <h3>관련 글</h3>
+      <h3 id="relatedTitle">관련 글</h3>
       <div id="related" class="related-list"></div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap"><span id="footerAuthor"></span> · TechNote</div>
+    <div class="wrap"><span id="footerAuthor"></span> · TechNote <span id="footerVersion" class="footer-version"></span></div>
   </footer>
 
   <script src="data/index.js"></script>

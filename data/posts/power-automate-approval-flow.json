@@ -1,3 +1,7 @@
 {
-  "content": "<p>Power Automate의 <strong>승인(Approvals)</strong> 커넥터를 사용하면 코드 없이 결재 흐름을 구성할 수 있습니다.</p><h2>1. 트리거</h2><p>「SharePoint - 항목이 만들어질 때」 트리거로 시작합니다.</p><h2>2. 승인 시작</h2><p>「승인 시작 및 대기」 액션에서 <em>유형</em>을 '승인/거부 - 첫 번째 응답'으로 선택합니다.</p><h2>3. 조건 분기</h2><p>결과(Outcome)가 <code>Approve</code>인지에 따라 상태 열을 업데이트합니다.</p><blockquote>팁: 승인자에 여러 명을 넣을 땐 세미콜론으로 구분합니다.</blockquote>"
+  "id": "power-automate-approval-flow",
+  "content": {
+    "ko": "<p>Power Automate의 <strong>승인(Approvals)</strong> 커넥터를 사용하면 코드 없이 결재 흐름을 구성할 수 있습니다.</p><h2>1. 트리거</h2><p>「SharePoint - 항목이 만들어질 때」 트리거로 시작합니다.</p><h2>2. 승인 시작</h2><p>「승인 시작 및 대기」 액션에서 <em>유형</em>을 '승인/거부 - 첫 번째 응답'으로 선택합니다.</p><h2>3. 조건 분기</h2><p>결과(Outcome)가 <code>Approve</code>인지에 따라 상태 열을 업데이트합니다.</p><blockquote>팁: 승인자에 여러 명을 넣을 땐 세미콜론으로 구분합니다.</blockquote>",
+    "en": "<p>The <strong>Approvals</strong> connector in Power Automate lets you build an approval flow without writing any code.</p><h2>1. Trigger</h2><p>Start with the \"When an item is created\" SharePoint trigger.</p><h2>2. Start an approval</h2><p>In the \"Start and wait for an approval\" action, set <em>Approval type</em> to \"Approve/Reject - First to respond\".</p><h2>3. Branch on the outcome</h2><p>Update the status column depending on whether the <code>Outcome</code> is <code>Approve</code>.</p><blockquote>Tip: when assigning multiple approvers, separate them with semicolons.</blockquote>"
+  }
 }
