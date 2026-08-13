@@ -70,9 +70,9 @@ window.BLOG_INDEX = {
         "type": "original",
         "url": ""
       },
-      "summary": "앱 온보딩, 조건부 액세스 연계, MFA 강제, 세션 제어, 로그 증적까지 Entra Private Access(ZTNA)를 실제로 구성하고 검증하는 5단계를 오류 코드·KQL 쿼리 예시와 함께 정리했습니다.",
+      "summary": "앱 온보딩, 조건부 액세스 연계, MFA 강제, 세션 제어, 로그 증적까지 Entra Private Access(ZTNA)를 실제로 구성하고 검증하는 5단계를 실습 캡처 20여 장과 오류 코드·KQL 쿼리 예시로 정리했습니다.",
       "thumbnail": "",
-      "readingMinutes": 3
+      "readingMinutes": 14
     },
     {
       "id": "microsoft-entra-internet-access로-인터넷-트래픽-통제하기-정책-설계부터-로그-가시성",
@@ -91,9 +91,9 @@ window.BLOG_INDEX = {
         "type": "original",
         "url": ""
       },
-      "summary": "정책 설계, 전/후 제어포인트 확인, 로그 가시성, 예외처리, 운영 가이드까지 Entra Internet Access를 실제로 구성하고 증적을 남기는 5단계를 예시 정책명과 함께 상세히 정리했습니다.",
+      "summary": "정책 설계, 전/후 제어포인트 확인, 로그 가시성, 예외처리, 운영 가이드까지 Entra Internet Access를 실제로 구성하고 증적을 남기는 5단계를 실습 캡처 25장과 함께 상세히 정리했습니다.",
       "thumbnail": "",
-      "readingMinutes": 4
+      "readingMinutes": 15
     },
     {
       "id": "agent-365-entra-agent-id-완전-정리-ai-에이전트에게도-사원증-이-필요한-이유",

@@ -104,6 +104,24 @@ a:hover { text-decoration: underline; }
   border: 1px solid var(--line); border-radius: 10px; background: #fff; }
 .article-content .img-caption { text-align: center; font-size: 12.5px; color: var(--ink-soft);
   margin: 0 0 18px; }
+
+/* 토글(details/summary) — 긴 글에서 상세 절차·캡처를 접어두는 용도 */
+.article-content details { margin: 16px 0; border: 1px solid var(--line); border-radius: 10px;
+  background: var(--surface); overflow: hidden; }
+.article-content details[open] { border-color: var(--brand); }
+.article-content summary { cursor: pointer; list-style: none; padding: 13px 18px; font-size: 15px;
+  font-weight: 600; color: var(--ink); background: var(--brand-soft); display: flex;
+  align-items: center; gap: 8px; user-select: none; }
+.article-content summary::-webkit-details-marker { display: none; }
+.article-content summary::before { content: "▸"; color: var(--brand); font-size: 12px;
+  transition: transform .15s; flex-shrink: 0; }
+.article-content details[open] summary::before { transform: rotate(90deg); }
+.article-content details summary:hover { background: #dcecf9; }
+.article-content details > *:not(summary) { padding: 4px 18px 4px; }
+.article-content details > p:first-of-type { margin-top: 14px; }
+.article-content details > :last-child { margin-bottom: 14px; padding-bottom: 14px; }
+.article-content details img { max-width: 100%; }
+.article-content details details { margin: 12px 0; }
 .source-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; font-size: 14px;
   background: var(--brand-soft); padding: 8px 14px; border-radius: 8px; }
 
