@@ -98,7 +98,10 @@ function loadPostContent(id) {
   }
   return new Promise((resolve) => {
     const s = document.createElement("script");
-    s.src = `data/posts/${encodeURIComponent(id)}.js`;
+    // site.version을 캐시 무효화 쿼리로 붙여, 본문이 바뀐 뒤에도 브라우저가 예전
+    // 캐시를 계속 쓰는 일이 없게 한다.
+    const v = (DB && DB.site && DB.site.version) || 1;
+    s.src = `data/posts/${encodeURIComponent(id)}.js?v=${v}`;
     s.onload = () => {
       const c = (window.BLOG_POST_CONTENT && window.BLOG_POST_CONTENT[id]) || "";
       postContentCache[id] = c;
@@ -107,7 +110,7 @@ function loadPostContent(id) {
     s.onerror = async () => {
       // 서버 환경 폴백: json으로 시도
       try {
-        const j = await (await fetch(`data/posts/${encodeURIComponent(id)}.json`)).json();
+        const j = await (await fetch(`data/posts/${encodeURIComponent(id)}.json?v=${v}`)).json();
         postContentCache[id] = j.content || "";
       } catch { postContentCache[id] = ""; }
       resolve(postContentCache[id]);

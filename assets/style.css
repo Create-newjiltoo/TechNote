@@ -34,13 +34,18 @@ a:hover { text-decoration: underline; }
 .brand-text small { font-size: 11px; color: var(--ink-soft); }
 .back-link { margin-left: auto; font-size: 14px; color: var(--ink-soft); }
 
-/* 언어 토글 */
-.lang-toggle { display: inline-flex; align-items: center; border: 1px solid var(--line);
-  border-radius: 999px; overflow: hidden; flex-shrink: 0; background: var(--surface); }
-.lang-toggle button { border: none; background: transparent; color: var(--ink-soft);
-  font-size: 12.5px; font-weight: 700; padding: 7px 13px; cursor: pointer; transition: all .15s; }
-.lang-toggle button.active { background: var(--brand); color: #fff; }
-.lang-toggle button:not(.active):hover { color: var(--brand); background: var(--brand-soft); }
+/* 언어 토글 — 세그먼트 컨트롤 스타일 */
+.lang-toggle { display: inline-flex; align-items: center; gap: 2px; flex-shrink: 0;
+  padding: 3px; border-radius: 999px; background: var(--brand-soft);
+  border: 1px solid rgba(15,108,189,.12); }
+.lang-toggle button { appearance: none; -webkit-appearance: none; border: none;
+  background: transparent; color: var(--ink-soft); font-size: 12.5px; font-weight: 700;
+  letter-spacing: .2px; padding: 6px 15px; border-radius: 999px; cursor: pointer;
+  transition: background .18s, color .18s, box-shadow .18s; }
+.lang-toggle button.active { background: var(--surface); color: var(--brand);
+  box-shadow: 0 1px 4px rgba(16,32,58,.14); }
+.lang-toggle button:not(.active):hover { color: var(--brand); }
+.lang-toggle button:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
 
 .search-box { position: relative; margin-left: auto; flex: 1; max-width: 440px; }
 .search-box input { width: 100%; height: 42px; padding: 0 40px 0 16px; border: 1px solid var(--line);

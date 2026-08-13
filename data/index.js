@@ -14,7 +14,7 @@ window.BLOG_INDEX = {
     },
     "author": "설용환",
     "baseUrl": "https://<your-username>.github.io/<repo>",
-    "version": 1,
+    "version": 2,
     "lastUpdated": "2026-08-13"
   },
   "categories": [
