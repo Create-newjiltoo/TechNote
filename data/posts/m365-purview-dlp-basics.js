@@ -1,0 +1,2 @@
+window.BLOG_POST_CONTENT = window.BLOG_POST_CONTENT || {};
+window.BLOG_POST_CONTENT["m365-purview-dlp-basics"] = "<p><strong>DLP(Data Loss Prevention)</strong>는 민감 정보가 조직 밖으로 유출되는 것을 막는 정책입니다.</p><h2>구성 요소</h2><ul><li><strong>위치</strong>: Exchange, SharePoint, OneDrive, Teams, 엔드포인트</li><li><strong>규칙</strong>: 조건 + 작업의 묶음</li><li><strong>조건</strong>: 민감 정보 유형(주민번호, 카드번호 등)</li><li><strong>작업</strong>: 차단, 알림, 재정의 허용</li></ul><p>처음엔 <em>테스트 모드(정책 팁만 표시)</em>로 배포해 오탐을 확인한 뒤 강제 적용하는 것이 안전합니다.</p>";

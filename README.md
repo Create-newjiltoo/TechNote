@@ -2,8 +2,8 @@
 
 GitHub Pages에 바로 올릴 수 있는 정적 기술 블로그입니다. 밝고 정돈된 디자인,
 카테고리 트리 + 태그, 상단 실시간 검색, 검색엔진 최적화(SEO)를 갖췄고,
-**모든 글을 데이터 파일 하나(`data/posts.js`)로 관리**해 나중에 링크를 받아
-자동으로 글을 추가하기 쉽게 설계했습니다.
+글이 수백~수천 개로 늘어나도 목록 페이지가 무거워지지 않도록 **메타데이터와
+본문을 분리해서 관리**합니다(자세한 이유는 아래 "데이터 구조" 참고).
 
 ## 파일 구조
 
@@ -13,13 +13,47 @@ blog/
   post.html           # 개별 글 보기 (post.html?id=글아이디)
   assets/
     style.css         # 밝은 테마 디자인
-    app.js            # 목록/검색/글 렌더링 + SEO(JSON-LD)
+    app.js            # 목록/검색/글 렌더링 + SEO(JSON-LD) + 본문 지연 로드
+    img/<주제>/        # 글에 쓰는 이미지(실습 캡처 등) 저장 위치
   data/
-    posts.js          # ★ 글 데이터 단일 소스 (여기에 글이 쌓인다)
-    posts.json        # 같은 데이터의 JSON 미러(참고용)
-  add_post.py         # 링크·내용을 받아 posts.js에 글 추가 (자동 업로드의 핵심)
+    index.js          # ★ 모든 글의 메타데이터 단일 소스 (제목/요약/태그 등, 본문 제외)
+    index.json         # 같은 데이터의 JSON 미러(참고용)
+    posts/
+      <글아이디>.js     # 글 하나의 본문만 담은 파일 (그 글을 열 때만 로드됨)
+      <글아이디>.json    # 같은 본문의 JSON 미러(참고용)
+  add_post.py         # 링크·내용을 받아 index.js + posts/<id>.js에 글 추가 (자동 업로드의 핵심)
   README.md
 ```
+
+## 데이터 구조 — 왜 메타데이터와 본문을 나눴나
+
+처음엔 글 전체(본문 포함)를 `data/posts.js` 파일 하나에 다 넣었습니다. 글이 몇 개
+안 될 때는 문제없지만, 이 방식은 **글이 늘어날수록 목록 페이지(index.html)가 매번
+모든 글의 본문 전체를 다운로드**하게 됩니다 — 방문자가 글 하나만 읽어도 브라우저는
+글 수백~수천 개의 본문 HTML을 전부 받아온 뒤라는 뜻입니다. 이미지가 많은 글이
+섞이기 시작하면 더 심해집니다.
+
+그래서 지금은 두 층으로 나눕니다.
+
+- **`data/index.js`** — 모든 글의 메타데이터(제목, 요약, 태그, 카테고리, 날짜, 출처,
+  예상 읽기 시간)만 담습니다. 본문은 들어있지 않아서 글이 수천 개가 되어도 이 파일은
+  완만하게만 커집니다(글 1개당 대략 0.5~1KB 수준). 목록/검색/태그 필터는 이 파일
+  하나만 읽습니다.
+- **`data/posts/<글아이디>.js`** — 글 하나의 본문 HTML만 담은 파일입니다. `post.html`이
+  그 글을 열 때(`<script src>` 태그를 동적으로 추가하는 방식) 그 글의 파일 하나만
+  불러옵니다. 다른 글의 본문은 전혀 내려받지 않습니다.
+
+이 구조 덕분에 글이 아무리 늘어나도 목록 페이지의 로딩 속도는 거의 변하지 않습니다.
+다만 **사이트 내 검색은 제목·요약·태그·카테고리명까지만** 대상으로 합니다(본문 전체
+검색은 목록 페이지에 본문을 올려야 해서 이 구조와 상충합니다). 나중에 글이 정말
+많아져서 `index.js` 자체도 무거워지면(대략 수천 개 이상), 카테고리별로
+`data/index-m365.js`처럼 인덱스를 더 쪼개거나, 본문 전체 검색이 꼭 필요해지면
+[Pagefind](https://pagefind.app/) 같은 정적 검색 인덱스 생성기를 빌드 단계에 추가하는
+방향을 권장합니다.
+
+`.json` 파일들은 브라우저가 실제로 쓰는 건 아니고(브라우저는 `.js`만 읽습니다),
+서버 환경에서 `fetch()`로 읽는 폴백 경로와 스크립트로 데이터를 다룰 때 참고용
+미러입니다.
 
 ## 미리보기 (내 PC에서)
 
@@ -37,7 +71,7 @@ python -m http.server 8000
 2. 이 `blog/` 폴더의 내용을 저장소 루트에 업로드(또는 `git push`)
 3. 저장소 **Settings → Pages → Source** 를 `main` 브랜치 `/ (root)` 로 설정
 4. 몇 분 뒤 `https://<사용자명>.github.io/technote/` 에서 공개됩니다
-5. `data/posts.js` 의 `baseUrl` 을 이 주소로 바꿔주세요(SEO/공유용)
+5. `data/index.js` 의 `site.baseUrl` 을 이 주소로 바꿔주세요(SEO/공유용)
 
 ## 글 추가하는 법
 
@@ -52,12 +86,15 @@ python add_post.py --title "제목" --category powerplatform \
 
 - `--category` : `m365` | `powerplatform` | `dev`
 - `--source`   : `original`(직접작성) | `blog` | `youtube` | `article` | `notion`
-- 실행하면 `data/posts.js` 맨 앞에 글이 추가됩니다. 커밋/푸시하면 사이트에 반영.
+- 실행하면 `data/index.js` 맨 앞에 글 메타데이터가 추가되고, `data/posts/<id>.js`에
+  본문이 별도로 저장됩니다. 커밋/푸시하면 사이트에 반영.
 
 ### 방법 2: 직접 편집
 
-`data/posts.js` 의 `posts` 배열에 아래 형식으로 항목을 하나 추가하면 됩니다:
+`data/index.js` 의 `posts` 배열에 메타데이터를 하나 추가하고(`content` 필드는
+넣지 않습니다), 같은 `id`로 `data/posts/<id>.js` 파일을 새로 만들어 본문을 넣습니다.
 
+`data/index.js`에 추가할 메타데이터:
 ```js
 {
   "id": "고유-슬러그",
@@ -67,9 +104,14 @@ python add_post.py --title "제목" --category powerplatform \
   "date": "2026-07-27",
   "source": { "type": "article", "url": "https://..." },
   "summary": "목록에 보일 한 줄 요약",
-  "readingMinutes": 5,
-  "content": "<p>본문은 HTML로. h2, ul, code, pre, blockquote 지원</p>"
+  "readingMinutes": 5
 }
+```
+
+`data/posts/고유-슬러그.js` 에 넣을 본문 파일:
+```js
+window.BLOG_POST_CONTENT = window.BLOG_POST_CONTENT || {};
+window.BLOG_POST_CONTENT["고유-슬러그"] = "<p>본문은 HTML로. h2, ul, code, pre, blockquote, img 지원</p>";
 ```
 
 ## 글쓰기 원칙 (항상 지킬 것)
@@ -92,6 +134,13 @@ python add_post.py --title "제목" --category powerplatform \
     고객사·실사용자 정보가 보이지 않는지(테스트 테넌트·샘플 계정인지) 넣기
     전에 반드시 확인한다. `증적` 태그가 없는 일반 글에는 이 예외를 적용하지
     않는다.
+- 새 글을 쓰기 전에 `data/index.js`의 기존 글 제목·태그·요약을 확인해서, 이미 다룬
+  주제와 겹치는 글은 쓰지 않는다. 같은 제품/기능이라도 기존 글이 다루지 않은
+  각도(다른 세부 기능, 실무 시나리오, 최신 업데이트 등)라면 겹치는 게 아니다.
+- 링크(기사/유튜브)를 따로 주지 않고 "M365 관련 글 써줘"처럼 요청받으면, Microsoft
+  Learn·Tech Community·공식 블로그 등을 직접 찾아 조사한 뒤 위 원칙대로 글을 쓴다.
+  이때도 참고한 자료 링크를 본문에 언급하지 않고, 가장 대표적인 공식 출처 하나를
+  `source.url`에 남긴다(`source.type`은 보통 `article` 또는 `blog`).
 
 ## 앞으로: 링크 자동 업로드 (설계 메모)
 
@@ -102,7 +151,7 @@ python add_post.py --title "제목" --category powerplatform \
    - 유튜브: 제목·설명·자막, 기사/블로그: 본문, 노션: 공개 페이지 내용
 2. 요약·정리 → `content`(HTML), `summary`, `tags`, `category` 생성
    - 앞서 만든 회의극 파이프라인(또는 간단한 LLM 호출)으로 자동 생성 가능
-3. `add_post.py` 의 `add_post(...)` 함수 호출 → `posts.js` 갱신
+3. `add_post.py` 의 `add_post(...)` 함수 호출 → `index.js` + `posts/<id>.js` 갱신
 4. `git commit && git push` → GitHub Pages 자동 반영
    - GitHub Actions로 "새 링크가 담긴 파일이 올라오면 → 요약 → add_post → 커밋"
      워크플로를 붙이면 완전 자동화됩니다.
@@ -112,7 +161,8 @@ python add_post.py --title "제목" --category powerplatform \
 
 ## 검색 / SEO
 
-- **사이트 내 검색**: 상단 검색창이 제목·요약·태그·본문·카테고리를 실시간 필터링
+- **사이트 내 검색**: 상단 검색창이 제목·요약·태그·카테고리명을 실시간 필터링(본문 전체
+  검색은 하지 않습니다 — 이유는 위 "데이터 구조" 참고)
 - **카테고리 + 태그**: 상단 카테고리 버튼, 태그 클라우드로 트리 탐색
 - **검색엔진 노출**: 각 글에 `<meta description>` 와 구조화 데이터(JSON-LD `BlogPosting`)를
   주입해 구글이 제목·날짜·카테고리·키워드를 이해합니다

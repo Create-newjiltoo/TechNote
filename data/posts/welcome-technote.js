@@ -1,0 +1,2 @@
+window.BLOG_POST_CONTENT = window.BLOG_POST_CONTENT || {};
+window.BLOG_POST_CONTENT["welcome-technote"] = "<p>안녕하세요. 이 블로그는 <strong>Microsoft 365</strong>, <strong>Power Platform</strong>, 그리고 <strong>개발</strong> 관련 지식을 실전 위주로 정리하는 공간입니다.</p><h2>왜 만들었나</h2><p>흩어져 있는 자료(블로그, 유튜브, 기술 기사, 노션 메모)를 한곳에 모아 검색 가능하게 정리하기 위해서입니다.</p><h2>구조</h2><ul><li>카테고리: M365 / Power Platform / Development</li><li>태그로 세부 주제 분류</li><li>상단 검색으로 제목·요약·태그를 즉시 검색</li></ul><p>앞으로 링크를 받아 자동으로 글이 추가되도록 확장할 예정입니다.</p>";
