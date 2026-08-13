@@ -45,8 +45,10 @@ INDEX_JS_HEADER = (
     "// 본문은 data/posts/<id>.js 에 개별 저장되어 글 상세 페이지에서만 지연 로드된다.\n"
     "// 새 글 추가는 add_post.py 가 이 파일들을 자동으로 갱신한다. 직접 편집도 가능.\n"
     "// title/summary/tags, site.description, category.desc는 {ko, en} 형태의 다국어 객체다.\n"
-    "// site.version은 데이터가 바뀔 때마다 1씩 증가시키는 값 — 여러 PC에서 나눠 작업할 때\n"
-    "// 화면 하단에 표시되는 이 숫자를 보고 로컬이 GitHub보다 뒤처졌는지 바로 확인할 수 있다.\n"
+    "// site.version은 데이터가 바뀔 때마다 0.00001씩 증가시키는 값이다(앞으로 수만 번\n"
+    "// 갱신해도 v0.00001, v0.00002... 처럼 천천히, 읽기 쉬운 자리수로 늘어나게 하기 위함).\n"
+    "// 여러 PC에서 나눠 작업할 때 화면 하단에 표시되는 이 숫자를 보고 로컬이 GitHub보다\n"
+    "// 뒤처졌는지 바로 확인할 수 있다.\n"
     "window.BLOG_INDEX = "
 )
 
@@ -69,14 +71,23 @@ def _load_index():
 
 
 def _save_index(db):
-    # 데이터가 바뀔 때마다 버전을 1 올리고 마지막 갱신일을 오늘로 찍는다.
-    # (화면 하단 footer에 "vN (날짜)"로 표시되어, 다른 PC에서 작업 시작 전
+    # 데이터가 바뀔 때마다 버전을 0.00001씩 올리고 마지막 갱신일을 오늘로 찍는다.
+    # (화면 하단 footer에 "v0.00003 (날짜)"처럼 표시되어, 다른 PC에서 작업 시작 전
     #  로컬이 GitHub보다 뒤처졌는지 화면만 보고도 바로 알 수 있게 하기 위함)
+    # 정수 대신 0.00001 단위로 늘리는 이유: 앞으로 수만 번 갱신되어도 버전 숫자가
+    # v0.00001, v0.00002... 처럼 천천히, 일정한 자리수로 늘어나게 하기 위함(사용자 요청).
     db.setdefault("site", {})
-    db["site"]["version"] = int(db["site"].get("version", 0)) + 1
+    db["site"]["version"] = round(float(db["site"].get("version", 0)) + 0.00001, 5)
     db["site"]["lastUpdated"] = date.today().isoformat()
 
     body = json.dumps(db, ensure_ascii=False, indent=2)
+    # json.dumps는 0.00001 같은 작은 값을 "1e-05" 식 과학적 표기로 쓸 수 있어, version
+    # 필드만 항상 고정 소수점 5자리 문자열로 재포맷한다(예: 1e-05 -> 0.00001).
+    body = re.sub(
+        r'("version":\s*)([-+]?\d*\.?\d+(?:[eE][-+]?\d+)?)',
+        lambda m: m.group(1) + f"{float(m.group(2)):.5f}",
+        body,
+    )
     INDEX_JS.write_text(INDEX_JS_HEADER + body + ";\n", encoding="utf-8")
     if INDEX_JSON.exists() or not INDEX_JSON.parent.exists():
         INDEX_JSON.write_text(body + "\n", encoding="utf-8")
@@ -137,7 +148,7 @@ def add_post(title_ko, title_en, category, tags_ko, tags_en, summary_ko, summary
     db["posts"].insert(0, post_meta)
     _save_index(db)
     _save_post_content(pid, content_ko, content_en)
-    print(f"추가됨: {pid}  (총 {len(db['posts'])}개, 버전 v{db['site']['version']})")
+    print(f"추가됨: {pid}  (총 {len(db['posts'])}개, 버전 v{db['site']['version']:.5f})")
     return pid
 
 

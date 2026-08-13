@@ -104,7 +104,7 @@ python add_post.py \
 - `--category` : `m365` | `powerplatform` | `dev`
 - `--source`   : `original`(직접작성) | `blog` | `youtube` | `article` | `notion`
 - 실행하면 `data/index.js` 맨 앞에 글 메타데이터가 추가되고, `data/posts/<id>.js`에
-  본문이 별도로 저장되며, `site.version`이 1 증가하고 `site.lastUpdated`가 오늘
+  본문이 별도로 저장되며, `site.version`이 0.00001 증가하고 `site.lastUpdated`가 오늘
   날짜로 갱신됩니다(아래 "버전 표시" 참고). 커밋/푸시하면 사이트에 반영.
 - `add_post.py`는 **새 글 추가 전용**입니다 — 기존 글을 수정하는 기능은 없으므로,
   이미 있는 글의 내용을 고칠 때는 아래 "방법 2"처럼 `data/index.js`의 해당 항목과
@@ -129,7 +129,7 @@ python add_post.py \
   "readingMinutes": 5
 }
 ```
-메타데이터를 추가/수정한 뒤에는 `site.version`을 1 올리고 `site.lastUpdated`를
+메타데이터를 추가/수정한 뒤에는 `site.version`을 0.00001 올리고 `site.lastUpdated`를
 오늘 날짜로 바꿔줍니다(add_post.py를 쓰면 자동으로 처리됨).
 
 `data/posts/고유-슬러그.js` 에 넣을 본문 파일:
@@ -181,12 +181,17 @@ window.BLOG_POST_CONTENT["고유-슬러그"] = {
 
 ## 버전 표시 — 여러 PC로 나눠 작업할 때 최신 여부 확인
 
-화면 하단 footer에 `v1 (2026-08-13)`처럼 데이터 버전과 마지막 갱신일이 표시됩니다
-(`data/index.js`의 `site.version`/`site.lastUpdated`). 글을 추가·수정해서
-`data/index.js`가 바뀔 때마다 버전을 1 올리고(`add_post.py`를 쓰면 자동), 이
+화면 하단 footer에 `v0.00003 (2026-08-13)`처럼 데이터 버전과 마지막 갱신일이
+표시됩니다(`data/index.js`의 `site.version`/`site.lastUpdated`). 글을 추가·수정해서
+`data/index.js`가 바뀔 때마다 버전을 0.00001씩 올리고(`add_post.py`를 쓰면 자동), 이
 숫자로 "지금 내가 들고 있는 로컬 사본이 GitHub에 올라간 것보다 낮은 버전은 아닌지"를
 화면만 보고 바로 확인할 수 있습니다. 로컬 버전이 GitHub보다 낮으면, 작업을 새로
 시작하기 전에 먼저 GitHub의 최신 내용을 받아와 반영합니다.
+
+정수(1, 2, 3...) 대신 0.00001 단위로 늘리는 이유는, 앞으로 글 추가/수정이 수만 번
+누적돼도 버전 숫자가 v0.00001 → v0.00002 → ... 처럼 아주 천천히, 일정한 자리수로
+늘어나게 하기 위해서입니다(예: 10,000번 갱신해도 아직 v0.1대). 화면에는 항상 소수점
+5자리까지 고정해서 표시합니다(`v1.23456`처럼 1 이상으로 넘어가도 자리수는 유지).
 
 ## 글쓰기 원칙 (항상 지킬 것)
 

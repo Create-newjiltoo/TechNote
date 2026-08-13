@@ -51,7 +51,6 @@ const STRINGS = {
     loadingContent: "본문을 불러오는 중…",
     loadFailed: "본문을 불러오지 못했습니다.",
     sourceLink: "원문 보기",
-    footerBuilt: "· 정적 HTML로 제작 · GitHub Pages 지원",
     loadMore: "더 보기",
     loadMoreHint: (shown, total) => `${shown} / ${total}개 표시 중 — 아래로 스크롤하면 자동으로 더 불러옵니다`,
     allShown: (total) => `총 ${total}개의 글을 모두 표시했습니다`,
@@ -70,7 +69,6 @@ const STRINGS = {
     loadingContent: "Loading content…",
     loadFailed: "Failed to load content.",
     sourceLink: "View original",
-    footerBuilt: "· Built with static HTML · GitHub Pages ready",
     loadMore: "Load more",
     loadMoreHint: (shown, total) => `Showing ${shown} of ${total} — more load automatically as you scroll`,
     allShown: (total) => `All ${total} posts shown`,
@@ -136,7 +134,9 @@ function renderFooterVersion(lang) {
   if (!el) return;
   const s = (DB && DB.site) || {};
   if (!s.version) { el.textContent = ""; return; }
-  const label = lang === "en" ? `v${s.version}` : `v${s.version}`;
+  // 버전은 0.00001씩 늘어나는 값이라, 자리수가 흔들리지 않도록 항상 소수점 5자리로 맞춰
+  // 표시한다(예: v0.00003, v0.00042, v1.23456).
+  const label = `v${Number(s.version).toFixed(5)}`;
   const updated = s.lastUpdated ? ` (${s.lastUpdated})` : "";
   el.textContent = `${label}${updated}`;
   el.title = lang === "en"
@@ -177,8 +177,6 @@ async function initIndex() {
     setText("heroTitle", s.title);
     setText("heroDesc", pick(s.description, state.lang));
     setText("footerAuthor", "© " + new Date().getFullYear() + " " + (s.author || ""));
-    const footerBuilt = document.getElementById("footerBuilt");
-    if (footerBuilt) footerBuilt.textContent = strings.footerBuilt;
     const search = document.getElementById("search");
     if (search) search.placeholder = strings.searchPlaceholder;
     const metaDesc = document.getElementById("metaDescription");
@@ -203,15 +201,20 @@ async function initIndex() {
       b.innerHTML = `<span>${c.icon || ""}</span>${esc(c.id === "all" ? strings.allCategory : c.name)}`;
       b.style.setProperty("--c", c.color);
       if (c.id === state.cat) b.style.background = c.color;
-      b.onclick = () => { state.cat = c.id; state.tag = null; state.visible = PAGE_SIZE; buildCatNav(); render(); };
+      b.onclick = () => { state.cat = c.id; state.tag = null; state.visible = PAGE_SIZE; buildCatNav(); buildTagCloud(); render(); };
       nav.appendChild(b);
     });
   }
 
+  // 카테고리("전체" 포함)에 맞춰 태그 클라우드를 다시 계산한다 — "전체"면 모든 글의
+  // 태그를, 특정 카테고리를 고르면 그 카테고리에 속한 글들의 태그만 보여준다.
   function buildTagCloud() {
     const tagCloud = document.getElementById("tagCloud");
     tagCloud.innerHTML = "";
-    const allTags = [...new Set(DB.posts.flatMap(p => pick(p.tags, state.lang) || []))].sort();
+    const postsInCat = state.cat === "all" ? DB.posts : DB.posts.filter(p => p.category === state.cat);
+    const allTags = [...new Set(postsInCat.flatMap(p => pick(p.tags, state.lang) || []))].sort();
+    // 카테고리가 바뀌어 이전에 선택했던 태그가 더 이상 후보에 없으면 선택을 해제한다.
+    if (state.tag && !allTags.includes(state.tag)) state.tag = null;
     allTags.forEach(t => {
       const chip = document.createElement("button");
       chip.className = "tag-chip" + (state.tag === t ? " active" : ""); chip.textContent = "#" + t;

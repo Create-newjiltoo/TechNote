@@ -2,8 +2,10 @@
 // 본문은 data/posts/<id>.js 에 개별 저장되어 글 상세 페이지에서만 지연 로드된다.
 // 새 글 추가는 add_post.py 가 이 파일들을 자동으로 갱신한다. 직접 편집도 가능.
 // title/summary/tags, site.description, category.desc는 {ko, en} 형태의 다국어 객체다.
-// site.version은 데이터가 바뀔 때마다 1씩 증가시키는 값 — 여러 PC에서 나눠 작업할 때
-// 화면 하단에 표시되는 이 숫자를 보고 로컬이 GitHub보다 뒤처졌는지 바로 확인할 수 있다.
+// site.version은 데이터가 바뀔 때마다 0.00001씩 증가시키는 값이다(앞으로 수만 번
+// 갱신해도 v0.00001, v0.00002... 처럼 천천히, 읽기 쉬운 자리수로 늘어나게 하기 위함).
+// 여러 PC에서 나눠 작업할 때 화면 하단에 표시되는 이 숫자를 보고 로컬이 GitHub보다
+// 뒤처졌는지 바로 확인할 수 있다.
 window.BLOG_INDEX = {
   "site": {
     "title": "TechNote",
@@ -14,7 +16,7 @@ window.BLOG_INDEX = {
     },
     "author": "설용환",
     "baseUrl": "https://<your-username>.github.io/<repo>",
-    "version": 2,
+    "version": 0.00003,
     "lastUpdated": "2026-08-13"
   },
   "categories": [
