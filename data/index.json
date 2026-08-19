@@ -8,8 +8,8 @@
     },
     "author": "설용환",
     "baseUrl": "https://<your-username>.github.io/<repo>",
-    "version": 0.00003,
-    "lastUpdated": "2026-08-13"
+    "version": 0.00005,
+    "lastUpdated": "2026-08-19"
   },
   "categories": [
     {
@@ -44,6 +44,76 @@
     }
   ],
   "posts": [
+    {
+      "id": "microsoft-copilot-studio로-나만의-ai-에이전트-만들기-시작부터-게시까지",
+      "title": {
+        "ko": "Microsoft Copilot Studio로 나만의 AI 에이전트 만들기 — 시작부터 게시까지",
+        "en": "Building Custom AI Agents with Microsoft Copilot Studio — From Setup to Publishing"
+      },
+      "category": "powerplatform",
+      "tags": {
+        "ko": [
+          "Copilot Studio",
+          "AI 에이전트",
+          "Power Platform",
+          "자동화",
+          "생성형 AI"
+        ],
+        "en": [
+          "Copilot Studio",
+          "AI Agents",
+          "Power Platform",
+          "Automation",
+          "Generative AI"
+        ]
+      },
+      "date": "2026-08-19",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-what-is-copilot-studio"
+      },
+      "summary": {
+        "ko": "헬프데스크 질문 응대나 승인 요청 처리 같은 반복 업무를 대신할 AI 에이전트를, Copilot Studio에서 토픽·지식 소스·워크플로로 어떻게 구성하고 어느 채널에 게시하는지 실무 관점으로 정리합니다.",
+        "en": "A practical look at building an AI agent in Copilot Studio to handle repetitive work like help-desk questions or approval requests — covering topics, knowledge sources, workflows, harness choices, and where to publish the result."
+      },
+      "thumbnail": "",
+      "readingMinutes": 3
+    },
+    {
+      "id": "microsoft-purview-민감도-레이블로-데이터-분류하고-보호하기",
+      "title": {
+        "ko": "Microsoft Purview 민감도 레이블로 데이터 분류하고 보호하기",
+        "en": "Classifying and Protecting Data with Microsoft Purview Sensitivity Labels"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Microsoft Purview",
+          "민감도 레이블",
+          "정보 보호",
+          "데이터 거버넌스",
+          "컴플라이언스"
+        ],
+        "en": [
+          "Microsoft Purview",
+          "Sensitivity Labels",
+          "Information Protection",
+          "Data Governance",
+          "Compliance"
+        ]
+      },
+      "date": "2026-08-19",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/purview/get-started-with-sensitivity-labels"
+      },
+      "summary": {
+        "ko": "문서·메일에 민감도 레이블을 붙여 암호화·워터마크·DLP 조건으로 연결하는 방법을, 레이블 설계부터 자동/필수 레이블링, 앱별 적용 범위, 권한·라이선스까지 실무 관점으로 정리합니다.",
+        "en": "A practical rundown of Microsoft Purview sensitivity labels — from naming and protection design through auto-labeling and mandatory labeling, cross-app coverage, and the permissions and licensing needed to run it in production."
+      },
+      "thumbnail": "",
+      "readingMinutes": 4
+    },
     {
       "id": "microsoft-entra-id-governance로-입사-이동-퇴사-자동화하기-lifecycle-work",
       "title": {
