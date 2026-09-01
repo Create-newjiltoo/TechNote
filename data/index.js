@@ -16,8 +16,8 @@ window.BLOG_INDEX = {
     },
     "author": "설용환",
     "baseUrl": "https://<your-username>.github.io/<repo>",
-    "version": 0.00005,
-    "lastUpdated": "2026-08-19"
+    "version": 0.00007,
+    "lastUpdated": "2026-09-01"
   },
   "categories": [
     {
@@ -52,6 +52,76 @@ window.BLOG_INDEX = {
     }
   ],
   "posts": [
+    {
+      "id": "power-apps-캔버스-앱-vs-모델-기반-앱-뭘-언제-써야-하는지-실무-기준으로-정리",
+      "title": {
+        "ko": "Power Apps 캔버스 앱 vs 모델 기반 앱 — 뭘 언제 써야 하는지 실무 기준으로 정리",
+        "en": "Power Apps Canvas Apps vs. Model-Driven Apps — A Practical Framework for Choosing"
+      },
+      "category": "powerplatform",
+      "tags": {
+        "ko": [
+          "Power Apps",
+          "캔버스 앱",
+          "모델 기반 앱",
+          "Dataverse",
+          "Power Platform"
+        ],
+        "en": [
+          "Power Apps",
+          "Canvas Apps",
+          "Model-Driven Apps",
+          "Dataverse",
+          "Power Platform"
+        ]
+      },
+      "date": "2026-09-01",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/power-apps/maker/model-driven-apps/model-driven-app-overview"
+      },
+      "summary": {
+        "ko": "화면부터 자유롭게 그리고 싶은지, 데이터 모델부터 설계하고 싶은지에 따라 갈리는 Power Apps의 두 앱 유형을, 데이터 소스 제약·설계 철학·적합한 시나리오까지 실무 기준으로 길게 비교합니다.",
+        "en": "A long, practical comparison of Power Apps' two app types — canvas and model-driven — covering data-source constraints, design philosophy, and which real-world scenarios each one actually fits."
+      },
+      "thumbnail": "",
+      "readingMinutes": 4
+    },
+    {
+      "id": "microsoft-intune-기기-규정-준수-정책으로-회사-리소스-접근-통제하기-원리부터-condition",
+      "title": {
+        "ko": "Microsoft Intune 기기 규정 준수 정책으로 회사 리소스 접근 통제하기 — 원리부터 Conditional Access 연동까지",
+        "en": "Enforcing Device Compliance with Microsoft Intune — From Policy Mechanics to Conditional Access Integration"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Microsoft Intune",
+          "기기 규정 준수",
+          "Conditional Access",
+          "제로 트러스트",
+          "엔드포인트 관리"
+        ],
+        "en": [
+          "Microsoft Intune",
+          "Device Compliance",
+          "Conditional Access",
+          "Zero Trust",
+          "Endpoint Management"
+        ]
+      },
+      "date": "2026-09-01",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/mem/intune/fundamentals/what-is-intune"
+      },
+      "summary": {
+        "ko": "재택·BYOD 환경에서 \"이 기기를 믿어도 되는가\"라는 질문에 답하는 Intune 기기 규정 준수 정책을, 두 계층 구조·위반 시 조치·플랫폼별 차이부터 Conditional Access와 실제로 맞물리는 지점까지 실무 관점으로 길게 정리합니다.",
+        "en": "A deep, practical walkthrough of Microsoft Intune device compliance policies — the two-tier policy structure, actions for noncompliance, platform differences, and exactly how compliance status feeds into Conditional Access to gate access to company resources."
+      },
+      "thumbnail": "",
+      "readingMinutes": 4
+    },
     {
       "id": "microsoft-copilot-studio로-나만의-ai-에이전트-만들기-시작부터-게시까지",
       "title": {
