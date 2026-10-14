@@ -16,8 +16,8 @@ window.BLOG_INDEX = {
     },
     "author": "설용환",
     "baseUrl": "https://<your-username>.github.io/<repo>",
-    "version": 0.00007,
-    "lastUpdated": "2026-09-01"
+    "version": 0.00017,
+    "lastUpdated": "2026-10-14"
   },
   "categories": [
     {
@@ -52,6 +52,356 @@ window.BLOG_INDEX = {
     }
   ],
   "posts": [
+    {
+      "id": "conditional-access-정책-설계-가이드-신호-결정-적용으로-보는-zero-trust-접근-통제",
+      "title": {
+        "ko": "Conditional Access 정책 설계 가이드 — 신호·결정·적용으로 보는 Zero Trust 접근 통제",
+        "en": "Conditional Access Policy Design Guide — Zero Trust Access Control Through Signals, Decisions, and Enforcement"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Conditional Access",
+          "Microsoft Entra",
+          "Zero Trust",
+          "MFA",
+          "보안"
+        ],
+        "en": [
+          "Conditional Access",
+          "Microsoft Entra",
+          "Zero Trust",
+          "MFA",
+          "Security"
+        ]
+      },
+      "date": "2026-10-14",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+      },
+      "summary": {
+        "ko": "Conditional Access를 '신호 → 결정 → 적용' 구조로 풀어 설명하고, 처음 도입할 때 꼭 필요한 정책 묶음과 report-only 기반 단계적 롤아웃, 커버리지 점검 방법까지 정리합니다.",
+        "en": "Breaks Conditional Access down into signals, decisions, and enforcement, then covers the baseline policy set, a report-only phased rollout, and how to check coverage."
+      },
+      "thumbnail": "",
+      "readingMinutes": 3
+    },
+    {
+      "id": "spf-dkim-dmarc-한-번에-이해하기-microsoft-365-메일-스푸핑-방어-설정-순서",
+      "title": {
+        "ko": "SPF·DKIM·DMARC 한 번에 이해하기 — Microsoft 365 메일 스푸핑 방어 설정 순서",
+        "en": "Understanding SPF, DKIM, and DMARC Together — Setting Up Microsoft 365 Anti-Spoofing in the Right Order"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "SPF",
+          "DKIM",
+          "DMARC",
+          "Exchange Online",
+          "이메일 보안"
+        ],
+        "en": [
+          "SPF",
+          "DKIM",
+          "DMARC",
+          "Exchange Online",
+          "Email Security"
+        ]
+      },
+      "date": "2026-10-14",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/defender-office-365/email-authentication-about"
+      },
+      "summary": {
+        "ko": "SPF·DKIM·DMARC가 각각 무엇을 검증하고 왜 함께 써야 하는지, DMARC를 p=none에서 reject까지 안전하게 올리는 순서와 Authentication-Results 헤더로 실패 원인을 진단하는 방법을 정리합니다.",
+        "en": "Explains what SPF, DKIM, and DMARC each verify and why they must work together, how to raise DMARC from p=none to reject safely, and how to diagnose failures from the Authentication-Results header."
+      },
+      "thumbnail": "",
+      "readingMinutes": 4
+    },
+    {
+      "id": "defender-for-office-365-plan-1-vs-plan-2-보호-사다리로-이해하는-메일-협업-",
+      "title": {
+        "ko": "Defender for Office 365 Plan 1 vs Plan 2 — 보호 사다리로 이해하는 메일·협업 보안",
+        "en": "Defender for Office 365 Plan 1 vs Plan 2 — Email and Collaboration Security as a Protection Ladder"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Defender for Office 365",
+          "Exchange Online",
+          "Safe Links",
+          "피싱",
+          "보안"
+        ],
+        "en": [
+          "Defender for Office 365",
+          "Exchange Online",
+          "Safe Links",
+          "Phishing",
+          "Security"
+        ]
+      },
+      "date": "2026-10-14",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/defender-office-365/mdo-about"
+      },
+      "summary": {
+        "ko": "기본 내장 보호, Plan 1, Plan 2를 '예방·조사·대응' 세 축의 사다리로 비교하고, 포털에서 두 플랜을 구분하는 방법과 어떤 조직에 어떤 플랜이 맞는지 판단 기준을 정리합니다.",
+        "en": "Compares built-in protection, Plan 1, and Plan 2 on prevention, investigation, and response, shows how to tell the plans apart in the portal, and gives criteria for choosing."
+      },
+      "thumbnail": "",
+      "readingMinutes": 3
+    },
+    {
+      "id": "copilot-도입-전-필수-점검-오버셰어링-정리와-가드레일-구성-3단계",
+      "title": {
+        "ko": "Copilot 도입 전 필수 점검 — 오버셰어링 정리와 가드레일 구성 3단계",
+        "en": "Before Rolling Out Copilot — Fixing Oversharing and Building Guardrails in Three Steps"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Microsoft Copilot",
+          "오버셰어링",
+          "SharePoint Advanced Management",
+          "Purview",
+          "DLP"
+        ],
+        "en": [
+          "Microsoft Copilot",
+          "Oversharing",
+          "SharePoint Advanced Management",
+          "Purview",
+          "DLP"
+        ]
+      },
+      "date": "2026-10-14",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/configure-secure-governed-data-foundation-microsoft-365-copilot"
+      },
+      "summary": {
+        "ko": "Copilot은 사용자가 이미 접근 권한을 가진 데이터만 근거로 삼습니다. 그래서 도입 전에 오버셰어링 정리 → 가드레일 구성 → 규제 대응 순서로 점검해야 하는 이유와 실무 체크리스트를 정리합니다.",
+        "en": "Copilot only grounds on data a user can already access, so oversharing must be cleaned up first. A practical checklist: remediate oversharing, set up guardrails, then meet regulations."
+      },
+      "thumbnail": "",
+      "readingMinutes": 4
+    },
+    {
+      "id": "microsoft-purview-보존-정책-vs-보존-레이블-남길-것은-남기고-지울-것은-지우는-설계",
+      "title": {
+        "ko": "Microsoft Purview 보존 정책 vs 보존 레이블 — 남길 것은 남기고 지울 것은 지우는 설계",
+        "en": "Microsoft Purview Retention Policies vs Retention Labels — Designing What to Keep and What to Delete"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Microsoft Purview",
+          "데이터 보존",
+          "Retention",
+          "컴플라이언스",
+          "Data Lifecycle Management"
+        ],
+        "en": [
+          "Microsoft Purview",
+          "Data Retention",
+          "Retention",
+          "Compliance",
+          "Data Lifecycle Management"
+        ]
+      },
+      "date": "2026-10-14",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/purview/retention"
+      },
+      "summary": {
+        "ko": "보존 정책과 보존 레이블의 적용 범위와 역할 차이, 보존·삭제 동작 세 가지, 여러 설정이 충돌할 때 결과를 가르는 보존 원칙 네 가지를 설계 관점에서 정리합니다.",
+        "en": "Covers how retention policies and retention labels differ in scope and role, the three retain/delete behaviors, and the four principles that decide the outcome when settings conflict."
+      },
+      "thumbnail": "",
+      "readingMinutes": 4
+    },
+    {
+      "id": "power-platform-데이터-정책-dlp-설계하기-커넥터-그룹-범위-기본-그룹-전략",
+      "title": {
+        "ko": "Power Platform 데이터 정책(DLP) 설계하기 — 커넥터 그룹·범위·기본 그룹 전략",
+        "en": "Designing Power Platform Data Policies (DLP) — Connector Groups, Scope, and the Default Group Strategy"
+      },
+      "category": "powerplatform",
+      "tags": {
+        "ko": [
+          "Power Platform",
+          "데이터 정책",
+          "DLP",
+          "커넥터",
+          "거버넌스"
+        ],
+        "en": [
+          "Power Platform",
+          "Data Policy",
+          "DLP",
+          "Connectors",
+          "Governance"
+        ]
+      },
+      "date": "2026-10-14",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/power-platform/admin/prevent-data-loss"
+      },
+      "summary": {
+        "ko": "Power Apps·Power Automate에서 데이터가 엉뚱한 곳으로 흘러가지 않게 하는 데이터 정책을 Business·Non-business·Blocked 그룹, 테넌트·환경 범위, 새 커넥터 기본 그룹 관점에서 설계하는 방법을 정리합니다.",
+        "en": "How to design Power Platform data policies that keep business data from flowing to the wrong places, using the Business, Non-business, and Blocked groups, tenant versus environment scope, and the default group for new connectors."
+      },
+      "thumbnail": "",
+      "readingMinutes": 4
+    },
+    {
+      "id": "power-automate-오류-처리-설계-run-after-try-catch-스코프-재시도-정책-실전-패턴",
+      "title": {
+        "ko": "Power Automate 오류 처리 설계 — Run after·Try/Catch 스코프·재시도 정책 실전 패턴",
+        "en": "Error Handling in Power Automate — Practical Patterns with Run After, Try/Catch Scopes, and Retry Policies"
+      },
+      "category": "powerplatform",
+      "tags": {
+        "ko": [
+          "Power Automate",
+          "오류 처리",
+          "Run after",
+          "Scope",
+          "재시도 정책"
+        ],
+        "en": [
+          "Power Automate",
+          "Error Handling",
+          "Run after",
+          "Scope",
+          "Retry Policy"
+        ]
+      },
+      "date": "2026-10-14",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/power-automate/guidance/coding-guidelines/error-handling"
+      },
+      "summary": {
+        "ko": "플로가 실패했을 때 조용히 죽지 않게 만드는 방법 — Run after 설정, Try/Catch 스코프, result() 함수로 오류 추출, 지수 재시도, Terminate, 로깅과 알림까지 실전 패턴으로 정리합니다.",
+        "en": "How to keep flows from failing silently: Run after settings, Try/Catch scopes, extracting errors with result(), exponential retries, Terminate, and logging with notifications."
+      },
+      "thumbnail": "",
+      "readingMinutes": 4
+    },
+    {
+      "id": "dataverse-보안-모델-이해하기-보안-역할-비즈니스-단위-팀-열-수준-보안-설계",
+      "title": {
+        "ko": "Dataverse 보안 모델 이해하기 — 보안 역할·비즈니스 단위·팀·열 수준 보안 설계",
+        "en": "Understanding the Dataverse Security Model — Designing Security Roles, Business Units, Teams, and Column-Level Security"
+      },
+      "category": "powerplatform",
+      "tags": {
+        "ko": [
+          "Dataverse",
+          "보안 역할",
+          "비즈니스 단위",
+          "Power Platform",
+          "권한 설계"
+        ],
+        "en": [
+          "Dataverse",
+          "Security Roles",
+          "Business Units",
+          "Power Platform",
+          "Permission Design"
+        ]
+      },
+      "date": "2026-10-14",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/power-platform/admin/wp-security-cds"
+      },
+      "summary": {
+        "ko": "Dataverse의 권한은 보안 역할·비즈니스 단위·팀·레코드 공유·열 수준 보안이 누적되어 결정됩니다. 각 요소의 역할과 함께, Entra 보안 그룹과 연결하는 현실적인 설계 방법을 정리합니다.",
+        "en": "Dataverse access is the accumulation of security roles, business units, teams, record sharing, and column-level security. Covers each element's role and a practical design linked to Entra security groups."
+      },
+      "thumbnail": "",
+      "readingMinutes": 5
+    },
+    {
+      "id": "microsoft-graph-인증-완전-정리-위임-권한-vs-애플리케이션-권한-클라이언트-자격-증명-흐름까지",
+      "title": {
+        "ko": "Microsoft Graph 인증 완전 정리 — 위임 권한 vs 애플리케이션 권한, 클라이언트 자격 증명 흐름까지",
+        "en": "Microsoft Graph Authentication Explained — Delegated vs Application Permissions and the Client Credentials Flow"
+      },
+      "category": "dev",
+      "tags": {
+        "ko": [
+          "Microsoft Graph",
+          "OAuth 2.0",
+          "Microsoft Entra",
+          "MSAL",
+          "API 권한"
+        ],
+        "en": [
+          "Microsoft Graph",
+          "OAuth 2.0",
+          "Microsoft Entra",
+          "MSAL",
+          "API Permissions"
+        ]
+      },
+      "date": "2026-10-14",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/graph/auth/auth-concepts"
+      },
+      "summary": {
+        "ko": "Graph를 호출하려면 앱 등록, 권한, 액세스 토큰이 필요합니다. 위임 접근과 앱 전용 접근의 차이, 권한 선택 기준, 클라이언트 자격 증명 흐름 4단계, 실무에서 지켜야 할 보안 원칙을 정리합니다.",
+        "en": "Calling Graph requires app registration, permissions, and an access token. Covers delegated versus app-only access, how to choose permissions, the four steps of the client credentials flow, and security practices."
+      },
+      "thumbnail": "",
+      "readingMinutes": 4
+    },
+    {
+      "id": "sharepoint-framework-spfx-개요-웹-파트-하나로-sharepoint-teams-viva-",
+      "title": {
+        "ko": "SharePoint Framework(SPFx) 개요 — 웹 파트 하나로 SharePoint·Teams·Viva·Copilot까지 확장하기",
+        "en": "SharePoint Framework (SPFx) Overview — Extending SharePoint, Teams, Viva, and Copilot with One Web Part"
+      },
+      "category": "dev",
+      "tags": {
+        "ko": [
+          "SPFx",
+          "SharePoint Framework",
+          "웹 파트",
+          "Viva Connections",
+          "Microsoft Teams"
+        ],
+        "en": [
+          "SPFx",
+          "SharePoint Framework",
+          "Web Parts",
+          "Viva Connections",
+          "Microsoft Teams"
+        ]
+      },
+      "date": "2026-10-14",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/sharepoint/dev/spfx/sharepoint-framework-overview"
+      },
+      "summary": {
+        "ko": "SPFx의 특징과 지원 범위(SharePoint·Teams·Viva·Copilot), 애드인 모델과의 관계, 개발 도구, 그리고 지원되지 않는 방식(DOM 직접 의존)을 피하는 원칙을 정리합니다.",
+        "en": "Covers SPFx's characteristics and reach (SharePoint, Teams, Viva, Copilot), its relation to the add-in model, development tooling, and the rule against depending on the page DOM."
+      },
+      "thumbnail": "",
+      "readingMinutes": 4
+    },
     {
       "id": "power-apps-캔버스-앱-vs-모델-기반-앱-뭘-언제-써야-하는지-실무-기준으로-정리",
       "title": {
