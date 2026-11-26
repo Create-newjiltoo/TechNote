@@ -54,6 +54,8 @@ const STRINGS = {
     loadMore: "더 보기",
     loadMoreHint: (shown, total) => `${shown} / ${total}개 표시 중 — 아래로 스크롤하면 자동으로 더 불러옵니다`,
     allShown: (total) => `총 ${total}개의 글을 모두 표시했습니다`,
+    tagMore: (n) => `태그 ${n}개 더 보기 ▾`,
+    tagLess: "태그 접기 ▴",
   },
   en: {
     searchPlaceholder: "Search title, summary, tags… (e.g. Power Automate, DLP)",
@@ -72,6 +74,8 @@ const STRINGS = {
     loadMore: "Load more",
     loadMoreHint: (shown, total) => `Showing ${shown} of ${total} — more load automatically as you scroll`,
     allShown: (total) => `All ${total} posts shown`,
+    tagMore: (n) => `Show ${n} more tags ▾`,
+    tagLess: "Show fewer tags ▴",
   },
 };
 function tr(lang) { return STRINGS[lang] || STRINGS.ko; }
@@ -208,19 +212,38 @@ async function initIndex() {
 
   // 카테고리("전체" 포함)에 맞춰 태그 클라우드를 다시 계산한다 — "전체"면 모든 글의
   // 태그를, 특정 카테고리를 고르면 그 카테고리에 속한 글들의 태그만 보여준다.
+  const TAG_LIMIT = 14;      // 접힌 상태에서 보여 줄 태그 수(글이 많은 순)
+  let tagsExpanded = false;
   function buildTagCloud() {
+    const strings = tr(state.lang);
     const tagCloud = document.getElementById("tagCloud");
     tagCloud.innerHTML = "";
     const postsInCat = state.cat === "all" ? DB.posts : DB.posts.filter(p => p.category === state.cat);
-    const allTags = [...new Set(postsInCat.flatMap(p => pick(p.tags, state.lang) || []))].sort();
+    // 태그별 글 수를 세어 많이 쓰인 순(같으면 이름순)으로 정렬한다.
+    const counts = {};
+    postsInCat.forEach(p => (pick(p.tags, state.lang) || []).forEach(t => { counts[t] = (counts[t] || 0) + 1; }));
+    const allTags = Object.keys(counts).sort((a, b) => counts[b] - counts[a] || a.localeCompare(b));
     // 카테고리가 바뀌어 이전에 선택했던 태그가 더 이상 후보에 없으면 선택을 해제한다.
     if (state.tag && !allTags.includes(state.tag)) state.tag = null;
-    allTags.forEach(t => {
+    let shownTags = tagsExpanded ? allTags : allTags.slice(0, TAG_LIMIT);
+    // 선택된 태그는 접힌 상태에서도 항상 보이게 맨 앞에 둔다.
+    if (state.tag && !shownTags.includes(state.tag)) shownTags = [state.tag, ...shownTags];
+    tagCloud.classList.toggle("expanded", tagsExpanded);
+    shownTags.forEach(t => {
       const chip = document.createElement("button");
-      chip.className = "tag-chip" + (state.tag === t ? " active" : ""); chip.textContent = "#" + t;
+      chip.className = "tag-chip" + (state.tag === t ? " active" : "");
+      chip.textContent = "#" + t;
+      chip.title = counts[t] + "";
       chip.onclick = () => { state.tag = (state.tag === t ? null : t); state.visible = PAGE_SIZE; buildTagCloud(); render(); };
       tagCloud.appendChild(chip);
     });
+    if (allTags.length > TAG_LIMIT) {
+      const more = document.createElement("button");
+      more.className = "tag-chip tag-toggle";
+      more.textContent = tagsExpanded ? strings.tagLess : strings.tagMore(allTags.length - TAG_LIMIT);
+      more.onclick = () => { tagsExpanded = !tagsExpanded; buildTagCloud(); };
+      tagCloud.appendChild(more);
+    }
   }
 
   // 검색 — 제목·요약·태그·카테고리명 대상 (본문은 목록 페이지에 로드하지 않으므로 검색 대상에서 제외)

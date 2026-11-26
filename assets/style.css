@@ -74,6 +74,8 @@ a:hover { text-decoration: underline; }
 .tag-chip { font-size: 12px; padding: 4px 11px; border-radius: 999px; background: var(--surface);
   border: 1px solid var(--line); color: var(--ink-soft); cursor: pointer; transition: all .12s; }
 .tag-chip:hover { border-color: var(--brand); color: var(--brand); }
+.tags-filter.expanded { max-height: 220px; overflow-y: auto; padding-right: 4px; }
+.tag-toggle { background: transparent; border-style: dashed; color: var(--brand); font-weight: 600; }
 .tag-chip.active { background: var(--brand); border-color: var(--brand); color: #fff; }
 .result-count { font-size: 13px; color: var(--ink-soft); }
 

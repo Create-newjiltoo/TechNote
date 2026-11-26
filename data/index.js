@@ -16,8 +16,8 @@ window.BLOG_INDEX = {
     },
     "author": "설용환",
     "baseUrl": "https://<your-username>.github.io/<repo>",
-    "version": 0.00037,
-    "lastUpdated": "2026-10-14"
+    "version": 0.00057,
+    "lastUpdated": "2026-11-26"
   },
   "categories": [
     {
@@ -52,6 +52,652 @@ window.BLOG_INDEX = {
     }
   ],
   "posts": [
+    {
+      "id": "entra-엔터프라이즈-앱-사용자-그룹-할당-사용자-할당-필수로-앱-접근-범위-좁히기",
+      "title": {
+        "ko": "Entra 엔터프라이즈 앱 사용자·그룹 할당 — 사용자 할당 필수로 앱 접근 범위 좁히기",
+        "en": "Assigning Users and Groups to Entra Enterprise Apps — Narrowing App Access with Required Assignment"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Microsoft Entra",
+          "Entra ID",
+          "거버넌스",
+          "보안"
+        ],
+        "en": [
+          "Microsoft Entra",
+          "Entra ID",
+          "Governance",
+          "Security"
+        ]
+      },
+      "date": "2026-11-26",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/assign-user-or-group-access-portal"
+      },
+      "summary": {
+        "ko": "포털 할당 절차와 앱 역할, 할당 필요 설정, 중첩 그룹 미지원, PowerShell·Graph 일괄 할당, 계정 검색까지 정리합니다.",
+        "en": "Portal assignment steps and app roles, the assignment required setting, no nested group support, bulk assignment with PowerShell and Graph, and account discovery."
+      },
+      "thumbnail": "",
+      "readingMinutes": 2
+    },
+    {
+      "id": "entra-앱-등록과-자격-증명-선택-가이드-인증서-클라이언트-비밀-페더레이션-자격-증명",
+      "title": {
+        "ko": "Entra 앱 등록과 자격 증명 선택 가이드 — 인증서·클라이언트 비밀·페더레이션 자격 증명",
+        "en": "Entra App Registration and Credential Choices — Certificates, Client Secrets and Federated Credentials"
+      },
+      "category": "dev",
+      "tags": {
+        "ko": [
+          "Microsoft Entra",
+          "Microsoft Graph",
+          "개발",
+          "보안"
+        ],
+        "en": [
+          "Microsoft Entra",
+          "Microsoft Graph",
+          "Development",
+          "Security"
+        ]
+      },
+      "date": "2026-11-26",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/entra/identity-platform/how-to-add-credentials"
+      },
+      "summary": {
+        "ko": "앱 등록 절차와 계정 유형 4가지, 인증서·비밀(최대 24개월)·페더레이션 자격 증명의 선택 순서와 운영 팁을 정리합니다.",
+        "en": "App registration steps and four account types, plus the order of choosing certificates, secrets (up to 24 months) and federated credentials, with operating tips."
+      },
+      "thumbnail": "",
+      "readingMinutes": 3
+    },
+    {
+      "id": "power-pages로-첫-사이트-만들기-환경-선택-템플릿-필요한-역할과-운영-전-점검",
+      "title": {
+        "ko": "Power Pages로 첫 사이트 만들기 — 환경 선택, 템플릿, 필요한 역할과 운영 전 점검",
+        "en": "Creating Your First Power Pages Site — Environment, Templates, Required Roles and Pre-Launch Checks"
+      },
+      "category": "powerplatform",
+      "tags": {
+        "ko": [
+          "Power Pages",
+          "Power Platform",
+          "Dataverse"
+        ],
+        "en": [
+          "Power Pages",
+          "Power Platform",
+          "Dataverse"
+        ]
+      },
+      "date": "2026-11-26",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/power-pages/getting-started/create-manage"
+      },
+      "summary": {
+        "ko": "기본 환경을 피해야 하는 이유, 템플릿으로 사이트 만들기 5단계, 필요한 역할(시스템 관리자)과 플랫폼 관리 ID, 포털 관리 앱 레코드 확인을 정리합니다.",
+        "en": "Why to avoid the default environment, five steps to create from a template, required roles and platform-managed identity, and Portal Management app records."
+      },
+      "thumbnail": "",
+      "readingMinutes": 2
+    },
+    {
+      "id": "intune-win32-앱-배포-완전-정리-설치-명령-감지-규칙-종속성-할당까지",
+      "title": {
+        "ko": "Intune Win32 앱 배포 완전 정리 — 설치 명령·감지 규칙·종속성·할당까지",
+        "en": "Deploying Win32 Apps with Intune — Install Commands, Detection Rules, Dependencies and Assignments"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Intune",
+          "Microsoft Intune",
+          "자동화"
+        ],
+        "en": [
+          "Intune",
+          "Microsoft Intune",
+          "Automation"
+        ]
+      },
+      "date": "2026-11-26",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/intune/app-management/deployment/add-win32"
+      },
+      "summary": {
+        "ko": "Win32 앱 추가 8단계 중 핵심인 무인 설치 명령, 반환 코드, 요구 사항·감지 규칙, 종속성(100)·대체(10) 한도, 할당 유형을 정리합니다.",
+        "en": "Key steps of adding a Win32 app: silent install commands, return codes, requirement and detection rules, dependency (100) and supersedence (10) limits, assignments."
+      },
+      "thumbnail": "",
+      "readingMinutes": 3
+    },
+    {
+      "id": "조건부-액세스-인사이트-및-보고-통합-문서-활용법-보고서-전용-정책의-영향을-강제-전에-검증하기",
+      "title": {
+        "ko": "조건부 액세스 인사이트 및 보고 통합 문서 활용법 — 보고서 전용 정책의 영향을 강제 전에 검증하기",
+        "en": "Using the Conditional Access Insights and Reporting Workbook — Validating Report-Only Policies Before Enforcing"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Conditional Access",
+          "Microsoft Entra",
+          "보안",
+          "제로트러스트"
+        ],
+        "en": [
+          "Conditional Access",
+          "Microsoft Entra",
+          "Security",
+          "Zero Trust"
+        ]
+      },
+      "date": "2026-11-26",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-insights-reporting"
+      },
+      "summary": {
+        "ko": "사전 조건, 매개 변수와 영향 요약(성공·실패·작업 필요·적용 안 됨) 해석, 조건별 분석, 변환으로 성능 개선, 문제 해결을 정리합니다.",
+        "en": "Prerequisites, parameters and impact summary interpretation, condition breakdown, improving performance with a transformation, and troubleshooting."
+      },
+      "thumbnail": "",
+      "readingMinutes": 3
+    },
+    {
+      "id": "spfx로-첫-웹-파트-만들기-프로젝트-생성-heft-미리-보기-속성-창과-매니페스트-이해",
+      "title": {
+        "ko": "SPFx로 첫 웹 파트 만들기 — 프로젝트 생성, heft 미리 보기, 속성 창과 매니페스트 이해",
+        "en": "Building Your First Web Part with SPFx — Project Creation, heft Preview, Property Pane and Manifest"
+      },
+      "category": "dev",
+      "tags": {
+        "ko": [
+          "SharePoint Framework",
+          "SharePoint",
+          "개발"
+        ],
+        "en": [
+          "SharePoint Framework",
+          "SharePoint",
+          "Development"
+        ]
+      },
+      "date": "2026-11-26",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/build-a-hello-world-web-part"
+      },
+      "summary": {
+        "ko": "Yeoman으로 HelloWorld 웹 파트를 만들고 heft start로 워크벤치에서 확인한 뒤, 속성 창 필드와 매니페스트 기본값을 확장하고 온라인 워크벤치 폐지 일정까지 짚습니다.",
+        "en": "Create a HelloWorld web part with Yeoman, preview via heft start, extend property pane fields and manifest defaults, and note the online workbench retirement."
+      },
+      "thumbnail": "",
+      "readingMinutes": 2
+    },
+    {
+      "id": "entra-관리-단위-administrative-unit-로-관리자-권한-범위-나누기-지역-사업부별-위임-관",
+      "title": {
+        "ko": "Entra 관리 단위(Administrative unit)로 관리자 권한 범위 나누기 — 지역·사업부별 위임 관리",
+        "en": "Scoping Admin Permissions with Entra Administrative Units — Delegation by Region or Business Unit"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Microsoft Entra",
+          "Entra ID",
+          "거버넌스",
+          "보안"
+        ],
+        "en": [
+          "Microsoft Entra",
+          "Entra ID",
+          "Governance",
+          "Security"
+        ]
+      },
+      "date": "2026-11-26",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/admin-units-manage"
+      },
+      "summary": {
+        "ko": "AU 개념과 라이선스, 생성·역할 할당·제한된 관리 단위 옵션, PowerShell/Graph 생성, 삭제 순서와 설계 기준을 정리합니다.",
+        "en": "AU concept and licensing, creation, role assignment and restricted management option, PowerShell/Graph creation, deletion order and design criteria."
+      },
+      "thumbnail": "",
+      "readingMinutes": 2
+    },
+    {
+      "id": "purview-communication-compliance-시작하기-권한-감사-그룹-설계부터-정책-조건-테스",
+      "title": {
+        "ko": "Purview Communication Compliance 시작하기 — 권한·감사·그룹 설계부터 정책 조건 테스트까지",
+        "en": "Getting Started with Purview Communication Compliance — From Permissions and Groups to Testing Policy Conditions"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Microsoft Purview",
+          "Purview",
+          "컴플라이언스"
+        ],
+        "en": [
+          "Microsoft Purview",
+          "Purview",
+          "Compliance"
+        ]
+      },
+      "date": "2026-11-26",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/purview/communication-compliance-configure"
+      },
+      "summary": {
+        "ko": "권한·감사 로그 준비, 지원 그룹 유형과 검토자 규칙, 템플릿/사용자 지정 정책 만들기, 조건 테스트(미리 보기)와 경고 검토를 정리합니다.",
+        "en": "Permissions and audit prep, supported group types and reviewer rules, creating template and custom policies, condition testing (preview) and alert review."
+      },
+      "thumbnail": "",
+      "readingMinutes": 3
+    },
+    {
+      "id": "microsoft-365-그룹-만료-정책-안-쓰는-teams-그룹을-자동으로-정리하는-수명-주기-관리",
+      "title": {
+        "ko": "Microsoft 365 그룹 만료 정책 — 안 쓰는 Teams·그룹을 자동으로 정리하는 수명 주기 관리",
+        "en": "Microsoft 365 Group Expiration Policy — Lifecycle Management that Cleans Up Unused Teams and Groups"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Microsoft Entra",
+          "Teams",
+          "거버넌스",
+          "자동화"
+        ],
+        "en": [
+          "Microsoft Entra",
+          "Teams",
+          "Governance",
+          "Automation"
+        ]
+      },
+      "date": "2026-11-26",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/entra/identity/users/groups-lifecycle"
+      },
+      "summary": {
+        "ko": "활동 기반 자동 갱신, 만료 설정과 알림 일정(30/15/1일), 삭제 후 30일 복원, 법적 보존·보존 정책과의 관계를 정리합니다.",
+        "en": "Activity-based auto-renewal, expiration settings and notice schedule (30/15/1 days), 30-day restore, and interplay with legal hold and retention."
+      },
+      "thumbnail": "",
+      "readingMinutes": 2
+    },
+    {
+      "id": "dataverse-비즈니스-규칙으로-코드-없이-입력-검증하기-범위-선택부터-문제-해결까지",
+      "title": {
+        "ko": "Dataverse 비즈니스 규칙으로 코드 없이 입력 검증하기 — 범위 선택부터 문제 해결까지",
+        "en": "Validating Input Without Code Using Dataverse Business Rules — From Scope to Troubleshooting"
+      },
+      "category": "powerplatform",
+      "tags": {
+        "ko": [
+          "Dataverse",
+          "Power Apps",
+          "Power Platform",
+          "자동화"
+        ],
+        "en": [
+          "Dataverse",
+          "Power Apps",
+          "Power Platform",
+          "Automation"
+        ]
+      },
+      "date": "2026-11-26",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/power-apps/maker/data-platform/data-platform-create-business-rule"
+      },
+      "summary": {
+        "ko": "범위(엔터티/모든 양식/특정 양식), 조건과 작업 구성, 활성화 방법, 규칙이 안 먹을 때의 점검, 150개 한도와 시간대 주의점을 정리합니다.",
+        "en": "Scope choices, building conditions and actions, activation, troubleshooting rules that do not fire, and the 150-rule limit and time zone notes."
+      },
+      "thumbnail": "",
+      "readingMinutes": 3
+    },
+    {
+      "id": "power-bi-배포-파이프라인-시작하기-개발-테스트-운영-단계로-보고서를-안전하게-배포",
+      "title": {
+        "ko": "Power BI 배포 파이프라인 시작하기 — 개발·테스트·운영 단계로 보고서를 안전하게 배포",
+        "en": "Getting Started with Power BI Deployment Pipelines — Safely Promoting Reports Across Dev, Test and Production"
+      },
+      "category": "powerplatform",
+      "tags": {
+        "ko": [
+          "Power BI",
+          "Power Platform",
+          "자동화"
+        ],
+        "en": [
+          "Power BI",
+          "Power Platform",
+          "Automation"
+        ]
+      },
+      "date": "2026-11-26",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/fabric/cicd/deployment-pipelines/get-started-with-deployment-pipelines"
+      },
+      "summary": {
+        "ko": "파이프라인 생성과 단계 정의(2~10단계), 워크스페이스 연결, 전체·선택·역방향 배포, 배포 규칙으로 단계별 설정 유지하는 방법을 정리합니다.",
+        "en": "Creating pipelines and defining 2-10 stages, assigning workspaces, full/selective/backward deployment, and keeping per-stage settings with rules."
+      },
+      "thumbnail": "",
+      "readingMinutes": 2
+    },
+    {
+      "id": "sharepoint-허브-사이트-설계-하위-사이트-대신-인트라넷을-링크로-묶는-방법",
+      "title": {
+        "ko": "SharePoint 허브 사이트 설계 — 하위 사이트 대신 인트라넷을 링크로 묶는 방법",
+        "en": "Designing SharePoint Hub Sites — Connecting Your Intranet with Links Instead of Subsites"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "SharePoint",
+          "Microsoft 365",
+          "거버넌스"
+        ],
+        "en": [
+          "SharePoint",
+          "Microsoft 365",
+          "Governance"
+        ]
+      },
+      "date": "2026-11-26",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/sharepoint/planning-hub-sites"
+      },
+      "summary": {
+        "ko": "허브가 주는 가치, 팀·소통·허브 사이트 역할, 기능/지역 기준 정렬, 연결과 탐색 설계, 100개·99개·2,000개 규모 가이드를 정리합니다.",
+        "en": "What hubs provide, site type roles, function vs region alignment, association and navigation design, and 100/99/2,000 scale guidance."
+      },
+      "thumbnail": "",
+      "readingMinutes": 3
+    },
+    {
+      "id": "defender-safe-links-정책-만들기-클릭-시점-url-보호와-정책-우선순위-관리",
+      "title": {
+        "ko": "Defender Safe Links 정책 만들기 — 클릭 시점 URL 보호와 정책 우선순위 관리",
+        "en": "Creating Defender Safe Links Policies — Time-of-Click URL Protection and Policy Priority"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Defender for Office 365",
+          "보안",
+          "Microsoft Defender"
+        ],
+        "en": [
+          "Defender for Office 365",
+          "Security",
+          "Microsoft Defender"
+        ]
+      },
+      "date": "2026-11-26",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/defender-office-365/safe-links-policies-configure"
+      },
+      "summary": {
+        "ko": "사전 설정 정책과의 관계, 적용 대상 AND/OR 규칙, URL·클릭 보호 옵션, 우선순위, PowerShell 정책/규칙 분리를 정리합니다.",
+        "en": "Relationship with preset policies, AND/OR recipient logic, URL and click protection options, priority, and PowerShell policy vs rule."
+      },
+      "thumbnail": "",
+      "readingMinutes": 3
+    },
+    {
+      "id": "power-automate-승인-흐름-만들기-승인-유형-선택부터-조건-분기-기록-갱신까지",
+      "title": {
+        "ko": "Power Automate 승인 흐름 만들기 — 승인 유형 선택부터 조건 분기·기록 갱신까지",
+        "en": "Building Power Automate Approval Flows — From Approval Types to Branching and Record Updates"
+      },
+      "category": "powerplatform",
+      "tags": {
+        "ko": [
+          "Power Automate",
+          "Power Platform",
+          "자동화"
+        ],
+        "en": [
+          "Power Automate",
+          "Power Platform",
+          "Automation"
+        ]
+      },
+      "date": "2026-11-26",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/power-automate/modern-approvals"
+      },
+      "summary": {
+        "ko": "승인 유형 4가지, SharePoint 휴가 신청 예제 흐름, 조건 분기, 30일 초과 승인과 게스트 승인자 같은 운영 팁을 정리합니다.",
+        "en": "Four approval types, a SharePoint vacation request flow, condition branching, and tips for 30-day-plus approvals and guest approvers."
+      },
+      "thumbnail": "",
+      "readingMinutes": 2
+    },
+    {
+      "id": "entra-패스키-fido2-프로필-설계-그룹별로-보안-키-동기화-패스키-허용-범위-나누기",
+      "title": {
+        "ko": "Entra 패스키(FIDO2) 프로필 설계 — 그룹별로 보안 키·동기화 패스키 허용 범위 나누기",
+        "en": "Entra Passkey (FIDO2) Profiles — Setting Different Passkey Rules per Group"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Microsoft Entra",
+          "Entra ID",
+          "보안",
+          "제로트러스트",
+          "인증"
+        ],
+        "en": [
+          "Microsoft Entra",
+          "Entra ID",
+          "Security",
+          "Zero Trust",
+          "Authentication"
+        ]
+      },
+      "date": "2026-11-26",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-passkeys-fido2"
+      },
+      "summary": {
+        "ko": "디바이스 바인딩 vs 동기화 패스키, 증명과 AAGUID 제한, 그룹별 프로필 적용, 인증 강도로 강제하는 순서를 정리합니다.",
+        "en": "Device-bound vs synced passkeys, attestation and AAGUID restrictions, per-group profiles, and enforcing with authentication strengths."
+      },
+      "thumbnail": "",
+      "readingMinutes": 2
+    },
+    {
+      "id": "entra-관리자-동의-워크플로-구성-앱-승인-요청을-안전하게-받고-처리하는-방법",
+      "title": {
+        "ko": "Entra 관리자 동의 워크플로 구성 — 앱 승인 요청을 안전하게 받고 처리하는 방법",
+        "en": "Entra Admin Consent Workflow — Receiving and Handling App Approval Requests Safely"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Microsoft Entra",
+          "Entra ID",
+          "보안",
+          "컴플라이언스"
+        ],
+        "en": [
+          "Microsoft Entra",
+          "Entra ID",
+          "Security",
+          "Compliance"
+        ]
+      },
+      "date": "2026-11-26",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-admin-consent-workflow"
+      },
+      "summary": {
+        "ko": "사용자 동의와 관리자 동의의 차이, 워크플로 활성화와 검토자 지정, 테넌트 전체 동의 부여 및 접근 범위 제한까지 정리합니다.",
+        "en": "User vs admin consent, enabling the workflow and assigning reviewers, granting tenant-wide consent, and limiting access afterward."
+      },
+      "thumbnail": "",
+      "readingMinutes": 2
+    },
+    {
+      "id": "authenticator-번호-일치-number-matching-로-mfa-피로-공격-막기-적용-범위와-환경",
+      "title": {
+        "ko": "Authenticator 번호 일치(Number matching)로 MFA 피로 공격 막기 — 적용 범위와 환경별 주의점",
+        "en": "Authenticator Number Matching Against MFA Fatigue — Scope and Environment Notes"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Microsoft Entra",
+          "보안",
+          "인증",
+          "제로트러스트"
+        ],
+        "en": [
+          "Microsoft Entra",
+          "Security",
+          "Authentication",
+          "Zero Trust"
+        ]
+      },
+      "date": "2026-11-26",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-number-match"
+      },
+      "summary": {
+        "ko": "MFA 피로 공격을 막는 번호 일치의 적용 시나리오, 같은 기기 로그인 경험, AD FS·NPS 확장 환경 주의점을 정리합니다.",
+        "en": "Where number matching applies, the same-device sign-in experience, and notes for AD FS and NPS extension environments."
+      },
+      "thumbnail": "",
+      "readingMinutes": 2
+    },
+    {
+      "id": "entra-스마트-잠금-smart-lockout-이해하기-공격자만-잠그고-정상-사용자는-지키는-방법",
+      "title": {
+        "ko": "Entra 스마트 잠금(Smart lockout) 이해하기 — 공격자만 잠그고 정상 사용자는 지키는 방법",
+        "en": "Entra Smart Lockout — Locking Out Attackers Without Locking Out Your Users"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Microsoft Entra",
+          "Entra ID",
+          "보안",
+          "인증"
+        ],
+        "en": [
+          "Microsoft Entra",
+          "Entra ID",
+          "Security",
+          "Authentication"
+        ]
+      },
+      "date": "2026-11-26",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-password-smart-lockout"
+      },
+      "summary": {
+        "ko": "기본 10회 잠금, 익숙한 위치/낯선 위치 카운터, 임계값 조정, 하이브리드(통과 인증)에서 AD DS 정책과 맞추는 규칙을 정리합니다.",
+        "en": "Default 10-attempt lockout, familiar vs unfamiliar location counters, tuning thresholds, and aligning with AD DS policy in hybrid setups."
+      },
+      "thumbnail": "",
+      "readingMinutes": 2
+    },
+    {
+      "id": "entra-동적-멤버-자격-그룹-설계-속성-규칙으로-그룹-관리-자동화하기",
+      "title": {
+        "ko": "Entra 동적 멤버 자격 그룹 설계 — 속성 규칙으로 그룹 관리 자동화하기",
+        "en": "Entra Dynamic Membership Groups — Automating Group Management with Attribute Rules"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Microsoft Entra",
+          "Entra ID",
+          "자동화",
+          "보안"
+        ],
+        "en": [
+          "Microsoft Entra",
+          "Entra ID",
+          "Automation",
+          "Security"
+        ]
+      },
+      "date": "2026-11-26",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
+      },
+      "summary": {
+        "ko": "규칙 빌더와 문법, 자주 쓰는 규칙 패턴, 처리 상태 확인, 속성 쓰기 권한이라는 보안 함정까지 정리합니다.",
+        "en": "Rule builder and syntax, common rule patterns, processing status checks, and the attribute write-permission security trap."
+      },
+      "thumbnail": "",
+      "readingMinutes": 2
+    },
+    {
+      "id": "entra-임시-액세스-패스-tap-도입-가이드-암호-없는-인증-수단을-처음-등록하는-안전한-방법",
+      "title": {
+        "ko": "Entra 임시 액세스 패스(TAP) 도입 가이드 — 암호 없는 인증 수단을 처음 등록하는 안전한 방법",
+        "en": "Temporary Access Pass (TAP) in Entra — A Safe Way to Register Your First Passwordless Method"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Microsoft Entra",
+          "Entra ID",
+          "보안",
+          "제로트러스트"
+        ],
+        "en": [
+          "Microsoft Entra",
+          "Entra ID",
+          "Security",
+          "Zero Trust"
+        ]
+      },
+      "date": "2026-11-26",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/howto-authentication-temporary-access-pass"
+      },
+      "summary": {
+        "ko": "TAP 정책 활성화, 수명·일회용 설정, 사용자별 발급과 첫 등록, 10분 제한 같은 운영 주의점을 단계별로 정리합니다.",
+        "en": "Enable the TAP policy, set lifetime and one-time use, issue passes per user, and handle limits such as the 10-minute registration window."
+      },
+      "thumbnail": "",
+      "readingMinutes": 2
+    },
     {
       "id": "microsoft-purview-감사-로그-검색-가이드-조건-설정-검색-작업-관리-결과-분석-관리-단위-범위",
       "title": {
