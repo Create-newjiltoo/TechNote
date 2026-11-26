@@ -16,7 +16,7 @@ window.BLOG_INDEX = {
     },
     "author": "설용환",
     "baseUrl": "https://<your-username>.github.io/<repo>",
-    "version": 0.00017,
+    "version": 0.00037,
     "lastUpdated": "2026-10-14"
   },
   "categories": [
@@ -52,6 +52,706 @@ window.BLOG_INDEX = {
     }
   ],
   "posts": [
+    {
+      "id": "microsoft-purview-감사-로그-검색-가이드-조건-설정-검색-작업-관리-결과-분석-관리-단위-범위",
+      "title": {
+        "ko": "Microsoft Purview 감사 로그 검색 가이드 — 조건 설정, 검색 작업 관리, 결과 분석, 관리 단위 범위 제어",
+        "en": "Microsoft Purview Audit Log Search Guide — Criteria, Search Job Management, Result Analysis, and Administrative Unit Scoping"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Purview",
+          "감사",
+          "감사 로그",
+          "조사",
+          "규정 준수"
+        ],
+        "en": [
+          "Purview",
+          "Audit",
+          "Audit Log",
+          "Investigation",
+          "Compliance"
+        ]
+      },
+      "date": "2026-10-14",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/purview/audit-search"
+      },
+      "summary": {
+        "ko": "감사 로그 검색 켜짐 확인(PowerShell), 라이선스별 보존 기간(180일/1년), 검색 조건 10종, 검색 작업 대시보드와 결과 내보내기 한도, 관리 단위로 접근 범위를 제한하는 방법을 정리합니다.",
+        "en": "Covers verifying audit log search is on via PowerShell, retention by license (180 days/1 year), the ten search criteria, the job dashboard and export limits, and restricting access scope with administrative units."
+      },
+      "thumbnail": "",
+      "readingMinutes": 4
+    },
+    {
+      "id": "entra-로그인-로그와-감사-로그-제대로-읽기-4가지-로그인-유형-변경-추적-권한과-보존",
+      "title": {
+        "ko": "Entra 로그인 로그와 감사 로그 제대로 읽기 — 4가지 로그인 유형, 변경 추적, 권한과 보존",
+        "en": "Reading Entra Sign-in and Audit Logs Properly — Four Sign-in Types, Change Tracking, Permissions, and Retention"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Entra ID",
+          "로그인 로그",
+          "감사 로그",
+          "모니터링",
+          "보안 운영"
+        ],
+        "en": [
+          "Entra ID",
+          "Sign-in Logs",
+          "Audit Logs",
+          "Monitoring",
+          "Security Operations"
+        ]
+      },
+      "date": "2026-10-14",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-sign-ins"
+      },
+      "summary": {
+        "ko": "Entra 활동 로그 4종의 구분, 로그인 로그의 Who/How/What과 4가지 유형, 사용량 및 인사이트, 감사 로그의 질문 범주와 이전·이후 값, Substrate Management 항목 해석, 권한과 장기 보존 팁을 정리합니다.",
+        "en": "Distinguishes the four Entra activity logs, the Who/How/What of sign-in logs and their four types, Usage & insights, the audit log's question categories and old/new values, interpreting Substrate Management entries, and tips on permissions and long-term retention."
+      },
+      "thumbnail": "",
+      "readingMinutes": 4
+    },
+    {
+      "id": "teams-앱-권한-정책-설계-허용-차단-전략-사용자-할당-일괄-해제와-운영-제약",
+      "title": {
+        "ko": "Teams 앱 권한 정책 설계 — 허용·차단 전략, 사용자 할당, 일괄 해제와 운영 제약",
+        "en": "Designing Teams App Permission Policies — Allow/Block Strategy, User Assignment, Bulk Unassign, and Operational Constraints"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Teams",
+          "앱 권한 정책",
+          "앱 거버넌스",
+          "Copilot 에이전트",
+          "관리 센터"
+        ],
+        "en": [
+          "Teams",
+          "App Permission Policies",
+          "App Governance",
+          "Copilot Agents",
+          "Admin Center"
+        ]
+      },
+      "date": "2026-10-14",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/microsoftteams/teams-app-permission-policies"
+      },
+      "summary": {
+        "ko": "앱을 허용하는 4개의 관문, 전역·사용자 지정 정책, 게시자 유형별 허용/차단 설계, 그룹 할당 미지원 한계, 앱 중심 관리와의 관계, 사용자 정책 확인·변경·일괄 해제 절차를 정리합니다.",
+        "en": "Covers the four gates that allow an app, global vs custom policies, allow/block design by publisher type, the lack of group assignment, the relationship with app centric management, and checking, changing and bulk-unassigning user policies."
+      },
+      "thumbnail": "",
+      "readingMinutes": 3
+    },
+    {
+      "id": "teams-앱-설정-정책으로-앱-고정-설치하기-앱-바-회의-확장-사용자-고정-에이전트-허용",
+      "title": {
+        "ko": "Teams 앱 설정 정책으로 앱 고정·설치하기 — 앱 바, 회의 확장, 사용자 고정, 에이전트 허용",
+        "en": "Pinning and Installing Apps with Teams App Setup Policies — App Bar, Meeting Extensions, User Pinning, and Agent Enablement"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Teams",
+          "앱 설정 정책",
+          "앱 고정",
+          "Copilot 에이전트",
+          "채택률"
+        ],
+        "en": [
+          "Teams",
+          "App Setup Policies",
+          "App Pinning",
+          "Copilot Agents",
+          "Adoption"
+        ]
+      },
+      "date": "2026-10-14",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/microsoftteams/teams-app-setup-policies"
+      },
+      "summary": {
+        "ko": "설정 정책의 설치·고정·업로드 제어 기능, 네 가지 고정 위치, 고정 앱 정책 만들기, 사용자 고정과 관리자 고정의 우선순위, 그룹 할당과 일괄 해제, 에이전트·Copilot 고정과 모바일 최소 2개 같은 한계를 정리합니다.",
+        "en": "Covers setup policies' install, pin and upload control, the four pin locations, creating pinned-app policies, admin vs user pin precedence, group assignment and bulk unassign, and limits such as agents, Copilot pinning and the two-app mobile minimum."
+      },
+      "thumbnail": "",
+      "readingMinutes": 4
+    },
+    {
+      "id": "defender-for-office-365-공격-시뮬레이션-교육-실전-피싱-시뮬레이션-만들기부터-결과-관리까",
+      "title": {
+        "ko": "Defender for Office 365 공격 시뮬레이션 교육 실전 — 피싱 시뮬레이션 만들기부터 결과 관리까지",
+        "en": "Attack Simulation Training in Defender for Office 365 in Practice — From Creating a Phishing Simulation to Managing Results"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Defender for Office 365",
+          "공격 시뮬레이션",
+          "피싱 교육",
+          "보안 인식",
+          "Microsoft 365 E5"
+        ],
+        "en": [
+          "Defender for Office 365",
+          "Attack Simulation",
+          "Phishing Training",
+          "Security Awareness",
+          "Microsoft 365 E5"
+        ]
+      },
+      "date": "2026-10-14",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/defender-office-365/attack-simulation-training-simulations"
+      },
+      "summary": {
+        "ko": "시뮬레이션 마법사의 기법·페이로드·대상·교육·알림·일정 설정과, 복사·취소·보고서 제외 같은 상태별 관리, 예상 손상률과 반복 위반자 활용법을 정리합니다.",
+        "en": "Covers the simulation wizard's technique, payload, target, training, notification and schedule settings, state-based management such as copy, cancel and exclude from reporting, and using predicted compromise rate and repeat offenders."
+      },
+      "thumbnail": "",
+      "readingMinutes": 5
+    },
+    {
+      "id": "entra-교차-테넌트-액세스-설정-완전-정리-인바운드-아웃바운드-신뢰-설정-상환-순서",
+      "title": {
+        "ko": "Entra 교차 테넌트 액세스 설정 완전 정리 — 인바운드·아웃바운드, 신뢰 설정, 상환 순서",
+        "en": "Entra Cross-Tenant Access Settings Explained — Inbound, Outbound, Trust Settings, and Redemption Order"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Entra ID",
+          "교차 테넌트 액세스",
+          "B2B 협업",
+          "MFA 신뢰",
+          "게스트"
+        ],
+        "en": [
+          "Entra ID",
+          "Cross-Tenant Access",
+          "B2B Collaboration",
+          "MFA Trust",
+          "Guests"
+        ]
+      },
+      "date": "2026-10-14",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/entra/external-id/cross-tenant-access-settings-b2b-collaboration"
+      },
+      "summary": {
+        "ko": "기본 설정과 조직별 설정의 상속, 인바운드·아웃바운드 허용/차단, 앱 허용 목록의 Microsoft 앱 4종, MFA·디바이스 신뢰, 상환 순서와 MSA 차단, 교차 테넌트 동기화 허용을 정리합니다.",
+        "en": "Covers default vs organizational settings and inheritance, inbound and outbound allow/block, four Microsoft apps for app allow lists, MFA and device trust, redemption order and MSA blocking, and allowing cross-tenant sync."
+      },
+      "thumbnail": "",
+      "readingMinutes": 5
+    },
+    {
+      "id": "sharepoint-onedrive-외부-공유-설정-설계-조직-수준-사이트-수준-anyone-링크-제한",
+      "title": {
+        "ko": "SharePoint·OneDrive 외부 공유 설정 설계 — 조직 수준, 사이트 수준, Anyone 링크 제한",
+        "en": "Designing SharePoint and OneDrive External Sharing — Organization Level, Site Level, and Anyone-Link Limits"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "SharePoint",
+          "OneDrive",
+          "외부 공유",
+          "게스트",
+          "Anyone 링크"
+        ],
+        "en": [
+          "SharePoint",
+          "OneDrive",
+          "External Sharing",
+          "Guests",
+          "Anyone Links"
+        ]
+      },
+      "date": "2026-10-14",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off"
+      },
+      "summary": {
+        "ko": "조직·사이트 수준 외부 공유의 우선순위(가장 제한적인 값 적용), 공유 수준 4종, 도메인 제한·게스트 만료·재인증, Anyone 링크 제한, 사이트 유형별 기본값과 예외를 정리합니다.",
+        "en": "Explains precedence between organization and site level (most restrictive wins), the four sharing levels, domain limits, guest expiration and reauthentication, Anyone-link limits, and defaults and exceptions by site type."
+      },
+      "thumbnail": "",
+      "readingMinutes": 5
+    },
+    {
+      "id": "agents-toolkit으로-microsoft-365-copilot-선언형-에이전트-만들기-생성-프로비저닝",
+      "title": {
+        "ko": "Agents Toolkit으로 Microsoft 365 Copilot 선언형 에이전트 만들기 — 생성, 프로비저닝, 테스트",
+        "en": "Building a Microsoft 365 Copilot Declarative Agent with Agents Toolkit — Create, Provision, Test"
+      },
+      "category": "dev",
+      "tags": {
+        "ko": [
+          "Copilot 확장",
+          "선언형 에이전트",
+          "Agents Toolkit",
+          "VS Code",
+          "Microsoft 365 Copilot"
+        ],
+        "en": [
+          "Copilot Extensibility",
+          "Declarative Agent",
+          "Agents Toolkit",
+          "VS Code",
+          "Microsoft 365 Copilot"
+        ]
+      },
+      "date": "2026-10-14",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/build-declarative-agents"
+      },
+      "summary": {
+        "ko": "VS Code의 Microsoft 365 Agents Toolkit으로 No Action 선언형 에이전트를 만들고 Provision한 뒤 Copilot에서 테스트하는 과정과, 프로비저닝 실패 점검 및 지침·지식·동작 확장 로드맵을 정리합니다.",
+        "en": "Creates a No Action declarative agent in VS Code with Microsoft 365 Agents Toolkit, provisions it and tests it in Copilot, with a provisioning-failure checklist and a roadmap for extending instructions, knowledge and actions."
+      },
+      "thumbnail": "",
+      "readingMinutes": 3
+    },
+    {
+      "id": "graph-explorer-제대로-쓰기-권한-동의-샘플-쿼리-코드-조각-기록-공유까지",
+      "title": {
+        "ko": "Graph Explorer 제대로 쓰기 — 권한 동의, 샘플 쿼리, 코드 조각, 기록·공유까지",
+        "en": "Getting the Most from Graph Explorer — Permission Consent, Sample Queries, Code Snippets, History, and Sharing"
+      },
+      "category": "dev",
+      "tags": {
+        "ko": [
+          "Microsoft Graph",
+          "Graph Explorer",
+          "REST API",
+          "개발 도구",
+          "권한"
+        ],
+        "en": [
+          "Microsoft Graph",
+          "Graph Explorer",
+          "REST API",
+          "Developer Tools",
+          "Permissions"
+        ]
+      },
+      "date": "2026-10-14",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/graph/graph-explorer/graph-explorer-features"
+      },
+      "summary": {
+        "ko": "Graph Explorer의 화면 구성, 최소 권한 동의 방법, 샘플 쿼리·리소스·기록 탭, 쿼리 영역과 코드 조각·Toolkit·Adaptive Cards 활용 및 토큰·공유 링크 주의점을 정리합니다.",
+        "en": "Covers Graph Explorer's layout, least-privilege consent, sample queries, resources and history tabs, the query area, and using code snippets, Toolkit and Adaptive Cards, with cautions on tokens and share links."
+      },
+      "thumbnail": "",
+      "readingMinutes": 3
+    },
+    {
+      "id": "entra-액세스-검토-access-reviews-로-그룹-앱-권한-정기-점검하기-범위-검토자-자동-적용-설",
+      "title": {
+        "ko": "Entra 액세스 검토(Access reviews)로 그룹·앱 권한 정기 점검하기 — 범위, 검토자, 자동 적용 설계",
+        "en": "Periodic Group and App Access Checks with Entra Access Reviews — Scope, Reviewers, and Auto-Apply Design"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Entra ID Governance",
+          "액세스 검토",
+          "게스트 관리",
+          "권한 회수",
+          "최소 권한"
+        ],
+        "en": [
+          "Entra ID Governance",
+          "Access Reviews",
+          "Guest Management",
+          "Access Revocation",
+          "Least Privilege"
+        ]
+      },
+      "date": "2026-10-14",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/entra/id-governance/create-access-review"
+      },
+      "summary": {
+        "ko": "그룹과 앱 대상 액세스 검토의 범위·검토자·주기 설정, 무응답 처리와 자동 적용의 위험, 결정 도우미, 다단계 검토, 현재/시리즈 설정 구분까지 운영 관점으로 정리합니다.",
+        "en": "An operations-focused look at access reviews for groups and apps: scope, reviewers and recurrence, non-response handling and auto-apply risks, decision helpers, multi-stage reviews, and Current vs Series settings."
+      },
+      "thumbnail": "",
+      "readingMinutes": 4
+    },
+    {
+      "id": "entra-자격-관리-entitlement-management-액세스-패키지-만들기-카탈로그-정책-승인-수명",
+      "title": {
+        "ko": "Entra 자격 관리(Entitlement management) 액세스 패키지 만들기 — 카탈로그, 정책, 승인, 수명 주기 설계",
+        "en": "Creating Entra Entitlement Management Access Packages — Catalogs, Policies, Approvals, and Lifecycle Design"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Entra ID Governance",
+          "자격 관리",
+          "액세스 패키지",
+          "승인",
+          "게스트 관리"
+        ],
+        "en": [
+          "Entra ID Governance",
+          "Entitlement Management",
+          "Access Package",
+          "Approval",
+          "Guest Management"
+        ]
+      },
+      "date": "2026-10-14",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-access-package-create"
+      },
+      "summary": {
+        "ko": "카탈로그와 리소스 역할, 요청 정책(내부·외부·관리자 직접 할당), 1~3단계 승인과 대체 승인자, 만료·연장·액세스 검토를 한 번에 설계하는 액세스 패키지 생성 절차와 PowerShell 예제를 정리합니다.",
+        "en": "Walks through creating an access package: catalogs and resource roles, request policies (internal, external, admin-only), one- to three-stage approvals with alternates, expiration, extensions and access reviews, with a PowerShell example."
+      },
+      "thumbnail": "",
+      "readingMinutes": 5
+    },
+    {
+      "id": "microsoft-entra-셀프-서비스-암호-재설정-sspr-도입-가이드-파일럿-그룹부터-검증까지",
+      "title": {
+        "ko": "Microsoft Entra 셀프 서비스 암호 재설정(SSPR) 도입 가이드 — 파일럿 그룹부터 검증까지",
+        "en": "Microsoft Entra Self-Service Password Reset (SSPR) Rollout Guide — From Pilot Group to Validation"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Entra ID",
+          "SSPR",
+          "암호 재설정",
+          "인증 방법",
+          "헬프데스크"
+        ],
+        "en": [
+          "Entra ID",
+          "SSPR",
+          "Password Reset",
+          "Authentication Methods",
+          "Help Desk"
+        ]
+      },
+      "date": "2026-10-14",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr"
+      },
+      "summary": {
+        "ko": "파일럿 그룹으로 SSPR을 켜고 인증 방법·등록·알림을 설정한 뒤 비관리자 계정으로 검증하는 절차와, 레거시 정책 폐지·하이브리드 운영상의 주의점을 정리합니다.",
+        "en": "Steps to enable SSPR for a pilot group, configure methods, registration and notifications, and validate with a non-admin account, plus notes on legacy policy retirement and hybrid operation."
+      },
+      "thumbnail": "",
+      "readingMinutes": 2
+    },
+    {
+      "id": "power-bi-행-수준-보안-rls-설계하기-역할-정의부터-동적-rls-검증까지",
+      "title": {
+        "ko": "Power BI 행 수준 보안(RLS) 설계하기 — 역할 정의부터 동적 RLS, 검증까지",
+        "en": "Designing Power BI Row-Level Security (RLS) — From Role Definition to Dynamic RLS and Validation"
+      },
+      "category": "powerplatform",
+      "tags": {
+        "ko": [
+          "Power BI",
+          "행 수준 보안",
+          "RLS",
+          "DAX",
+          "데이터 보안"
+        ],
+        "en": [
+          "Power BI",
+          "Row-Level Security",
+          "RLS",
+          "DAX",
+          "Data Security"
+        ]
+      },
+      "date": "2026-10-14",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/fabric/security/service-admin-row-level-security"
+      },
+      "summary": {
+        "ko": "Power BI에서 사용자별로 보이는 행을 제한하는 RLS의 4단계 워크플로, 정적·동적 DAX 필터 패턴, 서비스에서 멤버 추가와 역할로 테스트하기, B2B 게스트와 임베드 시나리오의 함정을 정리합니다.",
+        "en": "Covers the four-step RLS workflow for limiting rows per user in Power BI, static and dynamic DAX filter patterns, adding members and testing as a role in the service, and pitfalls with B2B guests and embedding."
+      },
+      "thumbnail": "",
+      "readingMinutes": 5
+    },
+    {
+      "id": "power-apps-컴포넌트-라이브러리-재사용-가능한-ui를-공유하고-버전-관리하는-방법",
+      "title": {
+        "ko": "Power Apps 컴포넌트 라이브러리 — 재사용 가능한 UI를 공유하고 버전 관리하는 방법",
+        "en": "Power Apps Component Libraries — Sharing and Versioning Reusable UI Components"
+      },
+      "category": "powerplatform",
+      "tags": {
+        "ko": [
+          "Power Apps",
+          "캔버스 앱",
+          "컴포넌트 라이브러리",
+          "재사용",
+          "버전 관리"
+        ],
+        "en": [
+          "Power Apps",
+          "Canvas Apps",
+          "Component Library",
+          "Reuse",
+          "Versioning"
+        ]
+      },
+      "date": "2026-10-14",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/component-library"
+      },
+      "summary": {
+        "ko": "캔버스 앱에서 헤더·메뉴 같은 UI를 여러 앱이 함께 쓰게 하는 컴포넌트 라이브러리의 생성·게시·가져오기·업데이트 흐름과 권한, 제한 사항을 정리합니다.",
+        "en": "Covers creating, publishing, importing, and updating component libraries that let many canvas apps share UI such as headers and menus, plus permissions and limitations."
+      },
+      "thumbnail": "",
+      "readingMinutes": 4
+    },
+    {
+      "id": "power-platform-솔루션과-파이프라인으로-alm-시작하기-개발-테스트-운영-배포-자동화",
+      "title": {
+        "ko": "Power Platform 솔루션과 파이프라인으로 ALM 시작하기 — 개발·테스트·운영 배포 자동화",
+        "en": "Getting Started with ALM in Power Platform — Solutions and Pipelines for Dev, Test, and Production Deployment"
+      },
+      "category": "powerplatform",
+      "tags": {
+        "ko": [
+          "Power Platform",
+          "ALM",
+          "솔루션",
+          "파이프라인",
+          "배포"
+        ],
+        "en": [
+          "Power Platform",
+          "ALM",
+          "Solutions",
+          "Pipelines",
+          "Deployment"
+        ]
+      },
+      "date": "2026-10-14",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/power-platform/alm/pipelines"
+      },
+      "summary": {
+        "ko": "Power Platform에서 앱·플로를 환경 간에 안전하게 옮기는 솔루션의 구조와, 관리자가 몇 분 만에 구성하는 파이프라인의 동작 원리·라이선스·운영 FAQ를 정리합니다.",
+        "en": "Covers how solutions move apps and flows safely between environments in Power Platform, and how pipelines work, their licensing, and operational FAQs that admins can configure in minutes."
+      },
+      "thumbnail": "",
+      "readingMinutes": 4
+    },
+    {
+      "id": "microsoft-entra-b2b-협업-가이드-외부-파트너를-게스트로-안전하게-초대하고-통제하기",
+      "title": {
+        "ko": "Microsoft Entra B2B 협업 가이드 — 외부 파트너를 게스트로 안전하게 초대하고 통제하기",
+        "en": "Microsoft Entra B2B Collaboration Guide — Inviting and Governing External Partners as Guests Safely"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Entra External ID",
+          "B2B",
+          "게스트 사용자",
+          "교차 테넌트 액세스",
+          "외부 협업"
+        ],
+        "en": [
+          "Entra External ID",
+          "B2B",
+          "Guest Users",
+          "Cross-Tenant Access",
+          "External Collaboration"
+        ]
+      },
+      "date": "2026-10-14",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/entra/external-id/what-is-b2b"
+      },
+      "summary": {
+        "ko": "B2B 협업의 초대·사용 흐름, 교차 테넌트 액세스 설정과 외부 협업 설정의 역할 차이, 셀프 서비스 가입, Conditional Access 적용, SharePoint·OneDrive 연동까지 정리합니다.",
+        "en": "Covers the B2B invitation and redemption flow, the difference between cross-tenant access settings and external collaboration settings, self-service sign-up, Conditional Access, and SharePoint and OneDrive integration."
+      },
+      "thumbnail": "",
+      "readingMinutes": 4
+    },
+    {
+      "id": "microsoft-entra-pim-실전-가이드-상시-관리자-권한을-just-in-time으로-바꾸는-방법",
+      "title": {
+        "ko": "Microsoft Entra PIM 실전 가이드 — 상시 관리자 권한을 Just-in-Time으로 바꾸는 방법",
+        "en": "Microsoft Entra PIM in Practice — Replacing Standing Admin Access with Just-in-Time Elevation"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Entra PIM",
+          "Privileged Identity Management",
+          "최소 권한",
+          "관리자 권한",
+          "Zero Trust"
+        ],
+        "en": [
+          "Entra PIM",
+          "Privileged Identity Management",
+          "Least Privilege",
+          "Admin Roles",
+          "Zero Trust"
+        ]
+      },
+      "date": "2026-10-14",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
+      },
+      "summary": {
+        "ko": "Eligible과 Active 할당의 차이, 활성화·승인·연장 흐름, 알림과 접근 검토까지 PIM의 핵심 개념을 정리하고 상시 관리자 권한을 줄이는 도입 순서를 제안합니다.",
+        "en": "Explains eligible versus active assignments, the activate, approve, and extend flow, notifications, and access reviews, and proposes an order for reducing standing admin access."
+      },
+      "thumbnail": "",
+      "readingMinutes": 4
+    },
+    {
+      "id": "microsoft-entra-id-protection-위험-탐지부터-자동-조치까지-아이덴티티-리스크-운영하기",
+      "title": {
+        "ko": "Microsoft Entra ID Protection — 위험 탐지부터 자동 조치까지 아이덴티티 리스크 운영하기",
+        "en": "Microsoft Entra ID Protection — Operating Identity Risk from Detection to Automated Remediation"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Entra ID Protection",
+          "위험 기반 정책",
+          "Conditional Access",
+          "위험 사용자",
+          "ID 보안"
+        ],
+        "en": [
+          "Entra ID Protection",
+          "Risk-Based Policy",
+          "Conditional Access",
+          "Risky Users",
+          "Identity Security"
+        ]
+      },
+      "date": "2026-10-14",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection"
+      },
+      "summary": {
+        "ko": "ID Protection의 탐지·조사·조치 3단계, 위험 사용자·위험 로그인 보고서 읽는 법, 위험 기반 Conditional Access와 자가 복구, 의심 상황별 조사 요령을 정리합니다.",
+        "en": "Covers ID Protection's detect, investigate, and remediate stages, reading risky user and risky sign-in reports, risk-based Conditional Access with self-remediation, and investigation tips by detection type."
+      },
+      "thumbnail": "",
+      "readingMinutes": 4
+    },
+    {
+      "id": "microsoft-purview-insider-risk-management-내부자-위험-정책-경고-케이스-운",
+      "title": {
+        "ko": "Microsoft Purview Insider Risk Management — 내부자 위험 정책·경고·케이스 운영 흐름",
+        "en": "Microsoft Purview Insider Risk Management — Operating Policies, Alerts, and Cases for Internal Risk"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Insider Risk Management",
+          "Microsoft Purview",
+          "내부자 위험",
+          "정책 템플릿",
+          "컴플라이언스"
+        ],
+        "en": [
+          "Insider Risk Management",
+          "Microsoft Purview",
+          "Insider Risk",
+          "Policy Templates",
+          "Compliance"
+        ]
+      },
+      "date": "2026-10-14",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/purview/insider-risk-management"
+      },
+      "summary": {
+        "ko": "내부자 위험 관리의 정책 → 경고 → 분류 → 조사 → 조치 워크플로, 대표 정책 템플릿과 시나리오, 도입 시 알아둘 개인정보 보호 원칙과 연동 기능을 정리합니다.",
+        "en": "Covers the Insider Risk Management workflow of policies, alerts, triage, investigation, and action, key policy templates and scenarios, and the privacy principles and integrations to know before adopting."
+      },
+      "thumbnail": "",
+      "readingMinutes": 4
+    },
+    {
+      "id": "intune-앱-보호-정책-mam-이해하기-등록-없이-byod-기기의-회사-데이터-지키기",
+      "title": {
+        "ko": "Intune 앱 보호 정책(MAM) 이해하기 — 등록 없이 BYOD 기기의 회사 데이터 지키기",
+        "en": "Understanding Intune App Protection Policies (MAM) — Securing Company Data on BYOD Devices Without Enrollment"
+      },
+      "category": "m365",
+      "tags": {
+        "ko": [
+          "Intune",
+          "앱 보호 정책",
+          "MAM",
+          "BYOD",
+          "모바일 보안"
+        ],
+        "en": [
+          "Intune",
+          "App Protection Policies",
+          "MAM",
+          "BYOD",
+          "Mobile Security"
+        ]
+      },
+      "date": "2026-10-14",
+      "source": {
+        "type": "article",
+        "url": "https://learn.microsoft.com/en-us/intune/app-management/protection/overview"
+      },
+      "summary": {
+        "ko": "앱 보호 정책이 앱 단위로 회사 데이터를 어떻게 보호하는지, MDM 등록 여부에 따른 두 가지 구성, 데이터 이동·접근 요구·조건부 실행 설계 포인트와 도입 순서를 정리합니다.",
+        "en": "Explains how app protection policies secure company data at the app level, the two setups with and without MDM enrollment, design points for data movement, access requirements, and conditional launch, and a rollout order."
+      },
+      "thumbnail": "",
+      "readingMinutes": 3
+    },
     {
       "id": "conditional-access-정책-설계-가이드-신호-결정-적용으로-보는-zero-trust-접근-통제",
       "title": {
