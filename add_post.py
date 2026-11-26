@@ -91,6 +91,21 @@ def _save_index(db):
     INDEX_JS.write_text(INDEX_JS_HEADER + body + ";\n", encoding="utf-8")
     if INDEX_JSON.exists() or not INDEX_JSON.parent.exists():
         INDEX_JSON.write_text(body + "\n", encoding="utf-8")
+    _bump_cache_version(db["site"]["version"])
+
+
+def _bump_cache_version(version):
+    # 브라우저/GitHub Pages(CDN)가 옛 data/index.js를 계속 쓰는 문제를 막기 위해,
+    # index.html·post.html의 data/index.js?v=N 의 N을 site.version(0.00037 -> 37)에 맞춰 올린다.
+    n = int(round(float(version) * 100000))
+    for name in ("index.html", "post.html"):
+        p = Path(__file__).resolve().parent / name
+        if not p.exists():
+            continue
+        t = p.read_text(encoding="utf-8")
+        new = re.sub(r"(data/index\.js\?v=)\d+", lambda m: m.group(1) + str(n), t)
+        if new != t:
+            p.write_text(new, encoding="utf-8")
 
 
 def _save_post_content(pid: str, content_ko: str, content_en: str):
